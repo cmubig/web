@@ -1,1019 +1,152 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2023-06-20T23:20:09-05:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">AirLab</title><subtitle>Researching, developing, and testing autonomous robots at Carnegie Mellon University
-</subtitle><entry><title type="html">Autonomous UAV-based Multi-Model High-Resolution Reconstruction for Aging Bridge Inspection (new)</title><link href="http://0.0.0.0:4000/shimizu/" rel="alternate" type="text/html" title="Autonomous UAV-based Multi-Model High-Resolution Reconstruction for Aging Bridge Inspection (new)" /><published>2023-01-17T12:58:00-06:00</published><updated>2023-01-17T12:58:00-06:00</updated><id>http://0.0.0.0:4000/shimizu-updated</id><content type="html" xml:base="http://0.0.0.0:4000/shimizu/">During a 4-year research collaboration with an international corporation in civil engineering ([Shimizu Institute of Technology](https://www.shimz.co.jp/en/company/about/sit/)), people in the AirLab built several specialized sensor components and robots to explore the possibilities of applying our knowledge and skills to the commonwealth of the general public.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2023-06-21T12:25:48-05:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">AirLab</title><subtitle>Researching, developing, and testing autonomous robots at Carnegie Mellon University
+</subtitle><entry><title type="html">Real-time Fault Detection for Autonomous Aerial Vehicles</title><link href="http://0.0.0.0:4000/fault-detection/" rel="alternate" type="text/html" title="Real-time Fault Detection for Autonomous Aerial Vehicles" /><published>2020-07-15T05:50:07-05:00</published><updated>2020-07-15T05:50:07-05:00</updated><id>http://0.0.0.0:4000/fault-detection</id><content type="html" xml:base="http://0.0.0.0:4000/fault-detection/">The recent increase in the use of aerial vehicles raises concerns about the safety and reliability of autonomous operations. There is a growing need for methods to monitor the status of these aircraft and report any faults and anomalies to the safety pilot or to the autopilot to deal with the emergency situation.
 
-With the target of enabling automated infrastructure inspection for structures such as buildings and bridges, we developed a series of sensor payload and drone systems that are able to automatically collect multi-model data, with an offline reconstruction system that utilizes the data collected to reconstruct the dense 3D model of the structure with geometric details and colored textures. The reconstructed data can be utilized for inspection purposes such as surface defect detection and quantification. They can also be further processed into 3D geometries that are suitable for scientific and engineering computation and analysis, e.g. structural safety analysis.
+In this project, we developed a real-time approach to detecting anomalies in the behavior of an aircraft. Additionally, we created and published a dataset of the 47 flight sequences where the anomalies happen. Our anomaly detection method is based on the Recursive Least Squares. The approach models the relationship between correlated input-output pairs online and uses the model to detect the anomalies. The result is an easy-to-deploy anomaly detection method that does not assume a specific aircraft model and can detect many types of faults and anomalies in a wide range of autonomous aircraft. The experiments on this method show a precision of 88.23%, recall of 88.23% and 86.36% accuracy for over 22 flight tests. For more details about the work, please refer to the publications below.
 
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/01_overview.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Overview of automated infrastruture inspection. &lt;br/&gt;
-  *: Collaborations with the KLab and .CerLab. at Carnegie Mellon University.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
+More information about the dataset is available [here](../alfa-dataset).
 
-{% youtube f8_asLTRino %}
+{% youtube HCtGbnqjKj8 %}
 
-{% youtube f6rbAVIwvnk %}
+### Source Code
 
-To fulfill the infrastructure inspection requirements, the sensor components and the robot platform need to deliver some important features:
-- Sub-millimeter 3D reconstruction for better defect quantification.
-- Computer-aided inspection capability for working with human inspectors.
-- Automatic defect detection in images.
-- Reconstruction of the inspected target for computer-aided engineering such as Finite Element Method (FEM) computations of structural safety analysis.
-
-There are several challenges we have addressed:
-- Extremely dense 3D reconstruction.
-- Stereo Structure-from-Motion (SfM).
-- High-resolution binocular stereo vision.
-- Robust robot state estimation.
-- Abstract mapping for lightweight localization.
-
-Some highlights of our reconstruction results from real-world data.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/ov_01_connecticut.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/ov_02_connecticut.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  A bridge girder of ~70m long.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/ov_03_beam.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  A concrete beam specimen.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/ov_04_bridge_section.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  A bridge section.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-In the course of resolving the challenges and fulfilling the research objectives, the team in the AirLab built a series of hardware and software. 
-
-# Sensors &amp; Robots #
-
-## Hardware at a glance ##
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/02_hardware_at_a_glance.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  The sensor components and the robots we worked on.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-The sensor components are featured as the following. It is a multi-modal sensor payload with the capability of real-time SLAM and high-resolution imaging.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/03_sensors.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/04_installation_configurations.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Rotating LiDAR with various installation configurations.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-{% youtube Gy-LWZ738zo %}
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/05_dual_lidar.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Dual-LiDAR for better SLAM in deteriorated environments.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-## Software created for working with the sensors and robots ##
-
-For our specialized sensor payloads, we have developed many pieces of software to effectively utilize them.
-
-__Customized time serving and time synchronization.__
-A customized solution for easy synchronizing multiple sensors and the computer.
-
-__Camera driver for binocular stereo camera.__
-Hardware time synchronization and external hardware triggers for the stereo camera. Custom exposure control for better consistency between the two cameras of the stereo camera.
-
-__LiDAR-camera extrinsic calibration.__
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/10_lidar_camera_calibration.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Calibrating the extrinsics between LiDAR and camera using edge information in the scene
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-__Stereo camera calibration.__
-Intrinsic and extrinsic calibration of the stereo camera.
-
-__Thermal camera calibration.__
-We designed several thermal targets for calibrating the intrinsics of the thermal camera.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/11_thermal_intrinsics.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Different targets for thermal camera calibration.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-__Thermal-RGB-LiDAR calibration.__
-Joint calibration for the extrinsics among thermal camera, RGB camera, and LiDAR.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/12_thermal_rgb_lidar_calib.jpg&quot; style=&quot;width:100%&quot; /&gt;
-&lt;/figure&gt;
-
-__Automatic color correction.__
-Automatically detect the color target using a deep-learning method. Automatically locate the target color block and correct the image color. Vignetting correction with multiple frames of detection.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/13_auto_color_correction.jpg&quot; style=&quot;width:100%&quot; /&gt;
-&lt;/figure&gt;
-
-{% youtube 9D_ScohNFko %}
-
-__IMU orientation calibration.__
-Detected procedure for calibrating the rotated angle of the IMU once the payload changes its configuration.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/14_IMU_angle.jpg&quot; style=&quot;width:80%&quot; /&gt;
-&lt;/figure&gt;
-
-## Autonomy ##
-
-__Dual-LiDAR-IMU real-time state estimation.__
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/15_luce_drone_duo_lidar.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/16_odometry.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Robust dual-LiDAR-IMU odometry runs in real-time.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-__Full-stack autonomy software.__
-A full-stack autonomy software developed in the AirLab has been deployed on our drone. The autonomy software implements the robot state machine, global and local trajectory planning, and robot control.
-
-{% youtube 9PEF0UA6OkI %}
-
-__Computer-aid inspection route planning.__
-A simple GUI for the human inspector to design and manage inspection routes. 
-
-{% youtube Y2SE4JpLVWE %}
-{% youtube KnuLxzohJVk %}
-
-## Data processing ##
-
-Due to the sheer amount of data we need to handle, many of the data processing procedures are facilitated by automatic scripts and run on remote servers.
-
-__Data extraction and pre-processing.__
-Images and point clouds are extracted from a large amount of raw data and preprocessed by leveraging the multi-core structure of the remote server. Parallel computing is applied whenever we can. 
-
-__Large-scale 3D reconstruction.__
-We have a set of dedicated programs and scripts to process the collected data and perform large-scale 3D reconstruction on HPCs. Similar to pre-processing, we try to leverage the multi-core architectures on the remote server to accelerate the process. This allows us to do reconstructions with billions of 3D points.
-
-
-__Meshing.__
-Customized program for automatically converting a point cloud to a surface mesh. Automatically, fill the holes in the surface mesh. The following is an example where we scanned a concrete beam specimen and reconstructed a dense point cloud of it. Then a surface mesh is generated with hole-filling.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/17_meshing.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Conversion from a point cloud to a surface mesh.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-__Thermal-mapping.__
-With the reconstructed dense 3D point cloud based on RGB images, we can project the thermal image to the point cloud. Special treatments are applied to smooth the intensity values of the thermal images to have temporal-consistent thermal pixel values.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/18_thermal_mapping.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Project thermal data to a point cloud.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-# Research #
-
-Apart from the engineering efforts, we also identified several research topics and pushed the relevant state-of-the-art toward more accurate, efficient, and robust algorithms. 
-
-## Stereo &amp; LiDAR-enhanced SfM ##
-We developed new algorithms by introducing stereo image constrain and LiDAR information to Structure-from-Motion (SfM). By doing this, the SfM becomes much more robust to noise and mismatches and the reconstructed point clouds have the correct scale.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/19_sfm.jpg&quot; style=&quot;width:100%&quot; /&gt;
-&lt;/figure&gt;
-
-{% youtube GUcKZ2PLPRQ %}
-{% youtube dJaaF8POB64 %}
-
-Related work: Estimating the Localizability of Tunnel-like Environments using LiDAR and UWB.
-
-{% youtube ZK8wA3pyPyE %}
-
-## High-resolution binocular stereo vision ##
-Perform reconstruction on a single pair of 4K-resolution stereo images. A single stereo pair results in ~12M reconstructed points that allow us to preserve as much detail as possible. Deep-learning methods are utilized.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/20_stereo.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Sample scenes and reconstructed dense point clouds.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-{% youtube X7j2-vkyZ9A %}
-{% youtube MibLMu-f14I %}
-
-## Line-based 2D-3D localization ##
-Exploit that line features in the inspected scenes to do better localization against a pre-built map. Can also be used to aid real-time visual odometry for more accurate and robust performance.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/21_line_based_localization.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Sample scenes and reconstructed dense point clouds.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-Line detection.
-{% youtube fUstzW7VsF0 %}
-
-Visual odometry and localization by line matching.
-{% youtube 3AjgdmW4RCQ %}
-
-## Abstract mapping ##
-Turn a heavy point cloud map into a lightweight abstract map represented by primitive geometries such as second-order surfaces (quadrics). Utilize the abstract map to do faster localization.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2023-01-17-shimizu-updated/22_abstract_mapping.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Sample scenes and reconstructed dense point clouds.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-{% youtube dTuwAkVQGnQ %}
-
-# Publications #
-- __Unified Representation of Geometric Primitives for Graph-SLAM Optimization Using Decomposed Quadrics.__ By Zhen, W., Yu, H., Hu, Y. and Scherer, S. In 2022 International Conference on Robotics and Automation (ICRA), 2022.
-- __ORStereo: Occlusion-Aware Recurrent Stereo Matching for 4K-Resolution Images.__ By Hu, Y., Wang, W., Yu, H., Zhen, W. and Scherer, S. In 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 5671-5678, 2021.
-- __ULSD: Unified Line Segment Detection across Pinhole, Fisheye, and Spherical Cameras.__ By Li, H., Yu, H., Yang, W., Yu, L. and Scherer, S. In ISPRS Journal of Photogrammetry and Remote Sensing, vol. 178, pp. 187–202, 2021.
-- __Deep-Learning Assisted High-Resolution Binocular Stereo Depth Reconstruction.__ By Hu, Y., Zhen, W. and Scherer, S. In 2020 IEEE International Conference on Robotics and Automation (ICRA), pp. 8637–8643, , 2020.
-- __LiDAR-enhanced Structure-from-Motion.__ By Zhen, W., Hu, Y., Yu, H. and Scherer, S. In 2020 IEEE International Conference on Robotics and Automation (ICRA), , pp. 6773–6779, , 2020.
-- __Line-Based 2D–3D Registration and Camera Localization in Structured Environments.__ By Yu, H., Zhen, W., Yang, W. and Scherer, S. In IEEE Transactions on Instrumentation and Measurement, vol. 69, no. 11, pp. 8962–8972, Jul. 2020.
-- __Monocular Camera Localization in Prior LiDAR Maps with 2D-3D Line Correspondences.__ By Yu, H., Zhen, W., Yang, W., Zhang, J. and Scherer, S. In IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2020.
-- __A Joint Optimization Approach of LiDAR-Camera Fusion for Accurate Dense 3-D Reconstructions.__ By Zhen, W., Hu, Y., Liu, J. and Scherer, S. In IEEE Robotics and Automation Letters, vol. 4, no. 4, pp. 3585–3592, Oct. 2019.
-- __A Unified 3D Mapping Framework Using a 3D or 2D LiDAR.__ By Zhen, W. and Scherer, S. In International Symposium on Experimental Robotics, pp. 702–711, 2018.
-- __Achieving Robust Localization in Geometrically Degenerated Tunnels.__ By Zhen, W. and Scherer, S. In Workshop on Challenges and Opportunities for Resilient Collective Intelligence in Subterranean Environments, Pittsburgh, Pa, 2018.
-- __Robust localization and localizability estimation with a rotating laser scanner.__ By Zhen, W., Zeng, S. and Scherer, S. In Proceedings - IEEE International Conference on Robotics and Automation, Singapore, Singapore, pp. 6240–6245, 2017.
-
-# Contributors #
-
-Long term
-- [Dr. Sebastian Scherer](https://theairlab.org/team/sebastian/) (PI)
-- [Weikun Zhen](https://theairlab.org/team/alumni/weikun/)
-- [Yaoyu Hu](https://theairlab.org/team/yaoyuh/)
-- [Huai Yu](https://levenberg.github.io)
-- [Junbin Yuan](https://theairlab.org/team/junbiny/)
-
-Short term. Thank you so much for your help! (Alphabetical order)
-- [Andrew Saba](https://theairlab.org/team/andrews/)
-- Chenxi Ji, Intern from Tsinghua University, China
-- [Henry (Hengrui) Zhang](https://theairlab.org/team/alumni/hengruiz/)
-- [Jingfeng Liu](https://theairlab.org/team/alumni/jingfengl/)
-- [John Keller](https://theairlab.org/team/johnk/)
-- Longwen Zhang, Intern from ShanghaiTech University, China
-- Punit Bhatt, MSCV at CMU
-- [Sam Zeng](https://theairlab.org/team/alumni/sam_zeng/)
-- Weyne (Ruixuan) Liu, Intern at CMU</content><author><name>Yaoyu Hu</name></author><category term="research" /><summary type="html">During a 4-year research collaboration with an international corporation in civil engineering (Shimizu Institute of Technology), people in the AirLab built several specialized sensor components and robots to explore the possibilities of applying our knowledge and skills to the commonwealth of the general public.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2023-01-17-shimizu-updated/thumbnail_sfm.jpg" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2023-01-17-shimizu-updated/thumbnail_sfm.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Wildland Fire Safety Monitoring</title><link href="http://0.0.0.0:4000/wildfire/" rel="alternate" type="text/html" title="Wildland Fire Safety Monitoring" /><published>2022-12-25T20:00:01-06:00</published><updated>2022-12-25T20:00:01-06:00</updated><id>http://0.0.0.0:4000/wildfire</id><content type="html" xml:base="http://0.0.0.0:4000/wildfire/">The dangers of wildfire continues to grow due to climate change. Mere minutes can turn a previously safe situation into a near-death scenario, as shown in the video below. Firefighters need more detailed and timely situational awareness to operate safely in these chaotic environments.
-
-{% youtube P8zU1MjZSnE %}
-
-We are conducting research to develop Unmanned Aerial Systems to aid in wildfire monitoring. The hazardous, dynamic, and visually degraded environment of wildfire gives rise to many unsolved fundamental research challenges. 
-
-- **Planning:** how should the system decide when and where to observe in a constantly evolving and uncertain environment?
-- **Perception:** how do we overcome severe visual degradation to detect crew members and obstacles?
-- **Forecasting:** how can we use our observations to predict how the environment will evolve in the short and long term?
-- **Integration:** how do we incorporate all these challenges into a cohesive closed-loop system?
-
-We aim to conduct integrative research that enables autonomous systems to operate robustly under high uncertainty and risk.
-
-## Systems: Drone Platform
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2022-12-08-wildfire/wildfire_team_front.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  (Left to right) Andrew, Kevin, Sabrina, Aksahy, Arjun, and Manuj with the lab&apos;s Wildfire drone, built on top of a DJI M600. Photo taken at prescribed fire site State Game Lands 174 in Pennsylvania.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-We built an aerial robotics platform for wildland fire monitoring.
-Powered by a compact yet powerful NVIDIA Jetson onboard computer, our UAS processes and plans on high density information in real time.
-Its RGB, thermal, and lidar sensors give the drone multiple sources of information to work with, letting it
-to perceive, map, and communicate fire-position up to a 1-km distance.
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2022-12-08-wildfire/wildfire_drone_closeup.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Closeup shot of the drone, showing lidar (round puck) and housing for downward-facing thermal and RGB sensors (center, blue). The onboard computer is mounted to the drone&apos;s frame (right).
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-Our UAS is also intelligent.
-It autonomously forms and executes a plan from human-in-the-loop input. The UAS continues to plan autonomously in real time based on its new observations about the world. Throughout, the drone streams back real-time HD video to the ground station. See the [Field Tests](#field-tests) section below for video demonstration.
-
-&lt;!-- &lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2022-12-08-wildfire/wildfire_functional_architecture.png&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;img src=&quot;/img/posts/2022-12-08-wildfire/wildfire_cyberphysical_architecture.png&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Functional (top) and cyber-physical (bottom) architecture diagrams of our wildfire multirotor drone.
- &lt;/figcaption&gt;
-&lt;/figure&gt; --&gt;
-
-Detailed documentation about the system may be found on the [Fireflies system website](https://mrsdprojects.ri.cmu.edu/2022teamd/), developed in collaboration with CMU&apos;s MRSD program.
-
-## Planning
-
-{% youtube IgvxBOlDikw %}
-
-Informative path planning is an important research topic in robotics with several applications in the spatiotemporal monitoring domain. Most works only consider planning on static information maps or short-horizon planning, whereas many real world scenarios call for planning on the dynamics of an environment with evolving information. Planning with growing and dynamic uncertainty presents a unique challenge requiring long-term horizon planning for globally optimal trajectories. In this work we describe dynamic information maps and develop approaches based on Monte Carlo Tree Search (MCTS) for long-horizon planning. We first develop an MCTS that uses informed time-aware actions to plan an optimal trajectory in the dynamic map. We further build upon this method with a learned approach that directly predicts the future value of a state instead of requiring a computationally intensive rollout. We demonstrate that both these methods outperform a primitive action MCTS baseline on a multitude of randomly generated experiments.
-
-This work is submitted and under review for [ICRA 2023](https://www.icra2023.org/). Paper may be found [here](https://drive.google.com/file/d/1IV4F7ksh9xjiFDN8v4Y11nxaV9DE6x38/view?usp=share_link).
-
-## Simulator: Wildfire AirSim
-
-{% youtube HrZQgI72u5I %}
-
-Wildfires are obviously dangerous environments to fly in. Therefore it&apos;s of utmost importance to validate as much as possible about any planning algorithms before deploying them in the field.
-
-We develop an open-source robotics simulator for autonomous aerial monitoring of wildland fires. We implement the simulator with [AirSim](https://microsoft.github.io/AirSim/), [Unreal Engine](https://www.unrealengine.com/), and [GridFire](https://github.com/sig-gis/gridfire).
-AirSim permits flexible API control through ROS. Unreal Engine provides high quality graphics, visualization, and powerful environment editing. GridFire is an open source scientific wildfire model, allowing one to import real-world landsat data of any location on earth, to simulate realistic growth of fires. We combine the advantages of all these sources into one cohesive simulator: Wildfire AirSim.
-
-The alpha release of our open source simulator may be found on our [GitHub](https://github.com/castacks/WildfireAirSim). We will continue development over the next few years to close the sim-to-real gap.
-
-## Field Tests
-
-### In the wild: prescribed fires
-
-Over the past two years, we&apos;ve had the opportunity to collect data and test autonomy over prescribed fires. Thusfar, our team has flown over four prescribed burns in western Pennsylvania.
-
-{% youtube fpyI2Rul7GQ %}
-
-### Controlled sites: Gascola
-
-Since prescribed fire season only occurs twice per year in spring and fall, we instead test frequently at our own field testing site.
-Below shows our latest test conducted at CMU&apos;s [Gascola test site](https://goo.gl/maps/jQHA8THia2ufj3ZQ7) for field robotics, featuring planning and streaming back of information in real time.
-
-{% youtube lFPr57q1Zng %}
-
-Further photos in our [Google Photos album](https://photos.app.goo.gl/vc6PZrPTPL2asXpq8).
-
-## Future Plans
-
-We&apos;re fortunate and thankful to have been awarded a three-year grant from the [National Science Foundation&apos;s National Robotics Initiative](https://beta.nsf.gov/funding/opportunities/national-robotics-initiative-30-innovations).
-The funding is scheduled for 2023-2026.
-In essence, we observe that existing technology gives information on the scale of kilometers and hours, but crew on the frontlines need situational awareness at *their* scale, i.e. meters and minutes.
-Our proposed solution is to fly much closer to the ground to provide this needed micro-scale monitoring.
-We aim to pursue the following research initiatives:
-
-&lt;figure&gt;
-  &lt;img src=&quot;/img/posts/2022-12-08-wildfire/nsf_nri_tradeoffs.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;img src=&quot;/img/posts/2022-12-08-wildfire/nsf_nri_comparison.png&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;img src=&quot;/img/posts/2022-12-08-wildfire/nsf_nri_flowchart.jpg&quot; style=&quot;width:100%&quot; /&gt;
-  &lt;figcaption&gt;
-  Planned research contributions.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-## Contributors
-* [Andrew Jong](https://theairlab.org/team/andrew_jong) (Lead - Planning, Perception, Systems, Simulation)
-
-* [Brady Moon](https://theairlab.org/team/bradym/) (Planning)
-
-* [Arjun Chauhan](https://arjunchauhan0910.github.io/) (Systems)
-
-* [Kevin Gmelin](https://sites.google.com/view/kevin-gmelin) (Systems)
-
-* [Sabrina Shen](https://www.linkedin.com/in/snshen/) (Systems)
-
-* [Manuj Trehan](https://www.linkedin.com/in/manuj-trehan/) (Systems)
-
-* [Akshay Venkatesh](https://www.linkedin.com/in/akshay-venkatesh/?trk=public_profile_project_contributor-image) (Systems)
-
-* [Siva Kailas](https://www.linkedin.com/in/siva-kailas-a35316138/) (Perception, Planning)
-
-* [Junbin Yuan](https://theairlab.org/team/junbiny/) (Perception, Planning)
-
-* Calvin Nguyen (Simulation)
-
-* Jacky He (Simulation)
-
-* [Dr. Katia Sycara](http://www.cs.cmu.edu/~sycara/) (Co-PI)
-
-* [Dr. Sebastian Scherer](https://theairlab.org/team/sebastian/) (PI)</content><author><name>Andrew Jong</name></author><category term="research" /><summary type="html">The dangers of wildfire continues to grow due to climate change. Mere minutes can turn a previously safe situation into a near-death scenario, as shown in the video below. Firefighters need more detailed and timely situational awareness to operate safely in these chaotic environments.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-12-08-wildfire/wildfire_display_card.gif" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-12-08-wildfire/wildfire_display_card.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How do you train AI Pilots?</title><link href="http://0.0.0.0:4000/aitf/" rel="alternate" type="text/html" title="How do you train AI Pilots?" /><published>2022-09-12T01:19:00-05:00</published><updated>2022-09-12T01:19:00-05:00</updated><id>http://0.0.0.0:4000/aitf</id><content type="html" xml:base="http://0.0.0.0:4000/aitf/">We need more pilots. AI can help! Advanced Aerial Mobility (AAM) is an inclusive term that covers urban (UAM), regional (RAM), intraregional (IAM), and suburban air mobility (SAM) solutions. All of these proposed solutions have one thing in common: they all envision a future where autonomous or semi-autonomous aerial vehicles are seamlessly integrated into the current airspace system. AAM solutions open doors to significant socio-economic benefits while at the same time presenting challenges in the seamless integration of these systems with human-operated aircraft and controlling agencies.
-
-Today, manned and unmanned vehicles are separated, limiting the utility and flexibility of operations and reducing efficiency. Human operated aircraft follow one of the two rules for operation: Visual Flight Rules (VFR) or Instrument Flight Rules (IFR). The choice of flying under VFR or IFR is typically a function of weather conditions. Under VFR, an aircraft is flown just like driving a car within the FAA established rules of the road. IFR flying on the other hand is typically associated with flying aircraft under degraded weather conditions where separation is provided by the ATC. While a pursuit to integrate AAM can start either under IFR or VFR, automated-VFR operations often have better scalability than automated-IFR operations [1]. Another option involves UTM solutions [2​] which in its current iteration only focuses on small unmanned aerial aircraft operating close to the ground (&lt;700 ft) in uncontrolled airspace.
-
-Mastering visual flight rules (VFR) operations for autonomous aircraft has significant operational advantages at unimproved sites, as well as in achievable traffic density compared to instrument flight rules (IFR) or completely separated operations between manned and unmanned systems. For (semi-)autonomous aircraft to operate in tandem with human pilots and ATC controllers under VFR, technological advancements in certain key areas are required.
-
-Specifically:
-
-1. Unmanned aircraft should be able to guarantee self-separation even in a tightly-spaced terminal airspace environment;
-2. Unmanned vehicles should be able to interpret high-level instructions by ATC to meet the expectations of a normal traffic flow;
-3. Autonomous aircraft need to understand the expected and unexpected behaviour of other aircraft;
-4. Communications by other pilots and ATC need to be parsed and valid, corresponding responses should be produced; and
-5. Other aircraft need to be detected and estimated, as well as their future trajectories need to be predicted.
-
-Many of these challenges have parallels in the self-driving industry and the technological improvements there can be leveraged to produce domain specific solutions for AAM. While this is promising, VFR-like AAM integration introduces newer challenges while pushing boundaries on the current state of technology.
-
-Given the domain transfer, we list below certain key areas of development where improvements on current state-of-the-art are needed to enable VFR-like autonomous aerial operations.
-
-## Aircraft Detection &amp; Tracking
-
-See-and-Avoid is one of the key tenets of VFR operation. The ability to spot other aircraft or aerial hazards like birds, balloons, gliders etc and execute maneuvers so as to mitigate a collision hazard is critical to successfully deploying AAM solutions in the NAS.
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-09-12-aitf/fig2.png&quot; style=&quot;width:100%&quot; /&gt;
- &lt;figcaption&gt;
- Visualization of the detected aircraft bounding boxes from the data onboard a general aviation aircraft. At long ranges, the SnR is really poor and our algorithms are trained to detect aircraft even in low SnR situations.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-A more detailed update on the recent work is available in this [blog post](https://theairlab.org/aircraft-detection/)
-
-## Intent Prediction
-
-Reasoning about the potential set of future trajectories that other aircraft can take is critical to ensure that the best actions are taken that also minimise risk. Typical prediction methods use short horizons and fail to capture the long term intent of other aircraft. The majority of trajectory prediction work has been explored in the pedestrian and autonomous vehicle domains. Within AAM, goal points such as airports, pilots and ATC communications, and rules of way (such as FAR §91.113) are often known. The use of this explicit source of information as well as implicit sources like weather can help decipher the intent of other aircraft and increase the length of reliable predictions.
-
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-09-12-aitf/fig3.png&quot; style=&quot;width:100%&quot; /&gt;
- &lt;figcaption&gt;
-The figure shows the dataset and its collection setup at the Pittsburgh-Butler Regional Airport (KBTP) — a non-towered GA airport that serves as a primary location for the dataset. Lighter colour indicates lower altitude. a) Shown is a snippet of the processed dataset with aircraft trajectories showing clear lobes for traffic patterns for both runways. b) The left traffic pattern and nomenclature for the runways at the airport. c) Picture of the data-collection setup.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-The lack of datasets and baseline methods makes it difficult to conduct meaningful research. Towards this end, we have been collecting traffic data from transponders at select controlled and uncontrolled airports to understand and train models for intent prediction. To capture the influence of weather on pilot decisions, the weather data was also collected by parsing Meteorological Aerodrome Reports (METARs) to gather the relevant sections from the full weather report. We recently published the first chunk of the trajectory data TrajAir along with a baseline method christened TrajAirNet to predict aircraft trajectories trained on the collected data. More information on this is available on this [blog post](https://theairlab.org/trajair/).
-
-*Patrikar, Jay, et al. “Predicting Like A Pilot: Dataset and Method to Predict Socially-Aware Aircraft Trajectories in Non-Towered Terminal Airspace.” IEEE International Conference on Robotics and Automation (2022).* [[Link]](https://arxiv.org/abs/2109.15158) [[Video]](https://www.youtube.com/watch?v=elAQXrxB2gw)
-
-
-## Safe and Socially-Compliant Navigation
-
-As the FAR rules only specify a rough guideline, autonomous vehicles must be equipped with the capability to make flexible decisions to comply with the traffic norm of arbitrary situations. The idea of social navigation is to learn to follow the observed traffic patterns in a socially-compliant manner. Generating actions that are not only safe but also socially compliant while following rules is thus critical in generating behaviour that is acceptable to human pilots co-habiting the same airspace. We use variants of Monte Carlo Tree Search algorithms that combine learned behaviour with logic specifications like Signal Temporal Logic to enable safe and socially compliant navigation.
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-09-12-aitf/fig4.png&quot; style=&quot;width:100%&quot; /&gt;
- &lt;figcaption&gt;
-Figure shows the proposed planning setup for a single agent. The offline policy is trained using Generative Adversarial Imitation Learning algorithm that learns system behaviour from the recorded trajectories from KBTP airport. Online this behaviour is executed using a Monte Carlo Tree Search algorithm that uses multiple roll-outs to model possible future states of the human agent. The roll-outs are constrained using Signal Temporal Logic specifications that ensure that the actions follow the rules established by the FAA.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-## Guaranteeing Safety
-
-The safety system ensures that the future trajectory of the aircraft is always safe and a safe fallback trajectory always exists. The safety system also checks plans made by the planning/inference engine to ensure that these plans will not violate safety invariants. Effectively, the safety system serves to encode a safe envelope and guarantees collision-free flight.
-
-## Automated Speech Recognition and Production
-
-It is critical to establish clear communication between a human operator/pilot and an AI system in our target problem domain. Specific to the aviation domain is the challenge of understanding and decoding aviation-specific terminology that is different from everyday speech constructions. Other challenges such as radio background noise, incomplete instructions and radio phraseology also need to be addressed.
-
-## High-fidelity Simulators
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-09-12-aitf/fig5.png&quot; style=&quot;width:100%&quot; /&gt;
- &lt;figcaption&gt;
-The figure shows the high-fidelity simulator setup that enables Human-AI interaction. Figure a) shows a top-down view with one human agent (magenta) interacting and one AI agent (lime) while trying to land on the same runway. The most likely branch of the MCTS forward propagation tree for both the agents is shown in cyan. White lines show the reference trajectories. Figure b) shows the physical simulator setup with an immersive environment for the human pilot. Figure c) shows a screengrab of the visual rendering of the simulator using the X-Plane 11 flight simulator backend.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-For safety critical domains, accurate high-fidelity simulators are required to test algorithms before real-world testing. Given the lack of simulators in the public domain, we designed our simulator christened XPlaneROS. With X-Plane 11 as the high-fidelity flight simulator and ROSplane as the autopilot, we obtain realistic aircraft models and visuals of similar aircraft. The X-Plane Connect Toolbox interfaces between X-Plane and Robot Operating System (ROS) topics. Based on the high-level commands input by the planner, ROSPlane generates the actuator commands for ailerons, rudder, elevator, and throttle, which are in turn sent to X-Plane through XPlaneConnect.
-
-More information is available in this [blog post](https://theairlab.org/xplane_ros/).
-
-## Big Picture
-
-We believe that the current understanding of integrating unmanned aircraft within National Airspace System (NAS) needs a more human-pilot centered approach. Pilots and aircraft already operating in the national airspace are important stakeholders in the larger discourse. Technological developments enabling close-proximity safe and seamless operation of manned and unmanned aircraft in a shared airspace need an understanding of the rules and conventions already in place. The NAS is a dynamic environment with in-built flexibility and protocols to handle traffic volumes and emergencies. Our core understanding is then rather than having the current NAS adapt to changing autonomy needs, we need to move towards identifying technological requirements that enable unmanned systems to operate along with humans in a collaborative fashion.
-
-*&quot;Our hope is to build true AI-pilots that are indistinguishable from a human pilot to enable a seamless integration within the current NAS.&quot;*
-
-## Video
-
-The video below gives a general overview of these challenges and potential applications.
-{% youtube NfnR7dm6_78 %}
-
-## Additional Info
-
-### Acknowledgments
-This work is supported by the Army Futures Command Artificial Intelligence Integration Center (AI2C).
-
-### References
-
-[1] Mueller, Eric R., Parmial H. Kopardekar, and Kenneth H. Goodrich. “Enabling airspace integration for high-density on-demand mobility operations.” 17th AIAA Aviation Technology, Integration, and Operations Conference. 2017.
-
-[2] Aweiss, Arwa S., et al. “Unmanned Aircraft Systems (UAS) Traffic Management (UTM) National Campaign II.” 2018 AIAA Information Systems-AIAA Infotech@ Aerospace. 2018. 1727.
-
-### Contributors
-
-[Jay Patrikar](https://theairlab.org/team/jay/), [Joao Dantas](https://theairlab.org/team/joao/), [Ingrid Navarro](https://navars.xyz/), [Ian Higgins](https://theairlab.org/team/ian/), [Jasmine Aloor](https://jaroan.github.io/jasminejerrya/), [Parv Kapoor](https://theairlab.org/team/parv_kapoor/), [Milad Hamidi](https://www.ri.cmu.edu/ri-people/milad-moghassem-hamidi/), [Jimin Sun](https://jiminsun.github.io/), [Ben Stoler](https://benstoler.com/), [Rohan Baijal](https://www.linkedin.com/in/rohan-baijal-10009baa/?originalSubdomain=in), [Brady Moon](http://127.0.0.1:4000/team/bradym/), [Sourish Ghosh](https://sourishghosh.com/), [Dr Jean Oh](https://www.cs.cmu.edu/~./jeanoh/), [Dr Sebastian Scherer](https://theairlab.org/team/sebastian/)
-
-
-### Term of use
-[BSD 4-Clause License](https://choosealicense.com/licenses/bsd-4-clause/)
-
-&lt;!-- &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;&lt;img alt=&quot;Creative Commons License&quot; style=&quot;border-width:0&quot; src=&quot;https://i.creativecommons.org/l/by/4.0/80x15.png&quot; /&gt;&lt;/a&gt;&lt;br /&gt;This work is licensed under a &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Creative Commons Attribution 4.0 International License&lt;/a&gt;. --&gt;</content><author><name>Joao Dantas</name></author><category term="research" /><summary type="html">We need more pilots. AI can help! Advanced Aerial Mobility (AAM) is an inclusive term that covers urban (UAM), regional (RAM), intraregional (IAM), and suburban air mobility (SAM) solutions. All of these proposed solutions have one thing in common: they all envision a future where autonomous or semi-autonomous aerial vehicles are seamlessly integrated into the current airspace system. AAM solutions open doors to significant socio-economic benefits while at the same time presenting challenges in the seamless integration of these systems with human-operated aircraft and controlling agencies.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-09-12-aitf/fig1.jpeg" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-09-12-aitf/fig1.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Design, Modeling and Control for a Tilt-rotor VTOL UAV in the Presence of Actuator Failure</title><link href="http://0.0.0.0:4000/vtol/" rel="alternate" type="text/html" title="Design, Modeling and Control for a Tilt-rotor VTOL UAV in the Presence of Actuator Failure" /><published>2022-05-20T05:40:07-05:00</published><updated>2022-05-20T05:40:07-05:00</updated><id>http://0.0.0.0:4000/vtol</id><content type="html" xml:base="http://0.0.0.0:4000/vtol/">Enabling vertical take-off and landing while providing the ability to fly long ranges opens the door to a wide range of new real-world aircraft applications while improving many existing tasks. Tiltrotor vertical take-off and landing (VTOL) unmanned aerial vehicles (UAVs) are a better choice than fixed-wing and multirotor aircraft for such applications. Prior works on these aircraft have addressed the aerodynamic performance, design, modeling, and control. However, a less explored area is the study of their potential fault tolerance due to their inherent redundancy, which allows them to tolerate some degree of actuation failure. This work introduces tolerance to several types of actuator failures in a tiltrotor VTOL aircraft. We discuss the design and modeling of a custom tiltrotor VTOL UAV, which is a combination of a fixed-wing aircraft and a quadrotor with tilting rotors, where the four propellers can be rotated individually. Then, we analyze the feasible wrench space the vehicle can generate and design the dynamic control allocation so that the system can adapt to actuator failures, benefiting from the configuration redundancy. The proposed approach is lightweight and is implemented as an extension to an already-existing flight control stack. Extensive experiments validate that the system can maintain the controlled flight under different actuator failures. This work is the first study of the tiltrotor VTOL&apos;s fault-tolerance that exploits the configuration redundancy to the best of our knowledge.
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-05-20-vtol/VTOL_PS_Label.PNG&quot; alt=&quot;Tiltrotor VTOL&quot; /&gt;
-&lt;/figure&gt;
-
-The following video is from the paper submitted to IROS 2022 (under review) that shows the general idea of the new controller design.
-
-{% youtube hrlpgeTy-0g %}
-
-Main contributions of this work includes:
-1. Proposing a dynamic control allocation method that allows the system to adapt to actuator failures. The proposed approach is light-weight and can be quickly extended on an already-existing flight control stack;
-2. Designing and modeling a tiltrotor VTOL with the ability to rotate each individual propeller; 
-3. Validating the system performance under the set of possible actuator failures in different flight phases;
-4. Providing the source code for the proposed strategies implemented on the PX4 flight controller firmware along with our simulation environment.
-
-For more detailed information about this work, please refer to the publication
+An early version of the source code for the method written in C++ (with ROS Kinetic) can be accessed from [here](https://bitbucket.org/castacks/online_system_identification/). The code can be used with the `rosbag` files in the ALFA dataset without any modification.
 
 ### Publications
 
-The general ideas on design and modeling of our custom tiltrotor VTOL and desing of the optimization based dynamic control allocation (so that the system can adapt to actuator failures) are described in the following publication (access on [arXiv](https://arxiv.org/abs/2205.05533)): 
+The real-time anomaly detection method for the autonomous aerial vehicles is described in the following publication (access on [arXiv](https://arxiv.org/abs/1907.00511) or [IEEE Xplore](https://ieeexplore.ieee.org/document/8794286)):
 
-*BibTeX:* 
+*BibTeX:*
 
-```
-@article{mousaei2022,
-author={Mohammadreza Mousaei and Junyi Geng and Azarakhsh Keipour and Dongwei Bai and Sebastian Scherer},
-booktitle={arXiv},
-title={Design, Modeling and Control for a Tilt-rotor VTOL UAV in the Presence of Actuator Failure}, 
-year={in press},
-link={https://arxiv.org/abs/2205.05533},
+@inproceedings{keipour:detection:2019,
+author={Azarakhsh Keipour and Mohammadreza Mousaei and Sebastian Scherer},
+booktitle={2019 IEEE International Conference on Robotics and Automation (ICRA)},
+title={Automatic Real-time Anomaly Detection for Autonomous Aerial Vehicles},
+year={2019},
+month={May},
+pages={5679-5685},
+doi={10.1109/ICRA.2019.8794286}
 }
-```
 
-*IEEE Style:* 
+*IEEE Style:*
 
-```
-M. Mousaei, J. Geng, A. Keipour, D. Bai, and S. Scherer, “Design, Modeling and Control for a Tilt-rotor VTOL UAV in the Presence of Actuator Failure,”, Under review. 
-```
+A. Keipour, M. Mousaei, and S. Scherer, “Automatic Real-time Anomaly Detection for Autonomous Aerial Vehicles,” in 2019 IEEE International Conference on Robotics and Automation (ICRA), May 2019, pp.5679-5685. doi: 10.1109/ICRA.2019.8794286.
 
-&lt;br/&gt;
+The dataset is described [here](../alfa-dataset) and in the following publication (access on [arXiv](https://arxiv.org/abs/1907.06268) or [The International Journal of Robotics Research website](https://doi.org/10.1177/0278364920966642)):
+
+*BibTeX:*
+
+@article{keipour:dataset:2019,
+author={Azarakhsh Keipour and Mohammadreza Mousaei and Sebastian Scherer},
+title={ALFA: A Dataset for UAV Fault and Anomaly Detection},
+journal = {The International Journal of Robotics Research},
+volume = {0},
+number = {0},
+pages = {1-6},
+month = {October},
+year = {2020},
+doi = {10.1177/0278364920966642},
+URL = {&lt;https://doi.org/10.1177/0278364920966642}&gt;,
+eprint = {&lt;https://doi.org/10.1177/0278364920966642}&gt;
+}
+
+*IEEE Style:*
+
+A. Keipour, M. Mousaei, and S. Scherer, “ALFA: A dataset for UAV fault and anomaly detection,” The International Journal of Robotics Research, vol. 0. no.  0,  pp.  1–6,  October  2020.  [Online]. Available:&lt;https://doi.org/10.1177/0278364920966642&gt;
 
 ### Contact
 
-Mohammadreza Mousaei (mmousaei [at] cs [dot] cmu [dot] edu)
+Azarakhsh Keipour - (keipour [at] cmu [dot] edu)
 
-Junyi Geng - (junyigen [at] andrew [dot] cmu [dot] edu) 
+Mohammadreza Mousaei - (mmousaei [at] cmu [dot] edu)
 
-Azarakhsh Keipour - (keipour [at] cmu [dot] edu) 
+Sebastian Scherer - (basti [at] cmu [dot] edu)
 
-Dongwei Bai - (saeedb [at] andrew [dot] cmu [dot] edu) 
+### Acknowledgments
 
-Sebastian Scherer - (basti [at] cmu [dot] edu)</content><author><name>AirLab</name></author><category term="research" /><summary type="html">Enabling vertical take-off and landing while providing the ability to fly long ranges opens the door to a wide range of new real-world aircraft applications while improving many existing tasks. Tiltrotor vertical take-off and landing (VTOL) unmanned aerial vehicles (UAVs) are a better choice than fixed-wing and multirotor aircraft for such applications. Prior works on these aircraft have addressed the aerodynamic performance, design, modeling, and control. However, a less explored area is the study of their potential fault tolerance due to their inherent redundancy, which allows them to tolerate some degree of actuation failure. This work introduces tolerance to several types of actuator failures in a tiltrotor VTOL aircraft. We discuss the design and modeling of a custom tiltrotor VTOL UAV, which is a combination of a fixed-wing aircraft and a quadrotor with tilting rotors, where the four propellers can be rotated individually. Then, we analyze the feasible wrench space the vehicle can generate and design the dynamic control allocation so that the system can adapt to actuator failures, benefiting from the configuration redundancy. The proposed approach is lightweight and is implemented as an extension to an already-existing flight control stack. Extensive experiments validate that the system can maintain the controlled flight under different actuator failures. This work is the first study of the tiltrotor VTOL’s fault-tolerance that exploits the configuration redundancy to the best of our knowledge.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-05-20-vtol/vtol_CAD.gif" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-05-20-vtol/vtol_CAD.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">TartanDrive is selected as an outstanding learning paper finalist in ICRA2022</title><link href="http://0.0.0.0:4000/highlight-tartandrive/" rel="alternate" type="text/html" title="TartanDrive is selected as an outstanding learning paper finalist in ICRA2022" /><published>2022-05-03T05:33:07-05:00</published><updated>2022-05-03T05:33:07-05:00</updated><id>http://0.0.0.0:4000/tartandrive</id><content type="html" xml:base="http://0.0.0.0:4000/highlight-tartandrive/">We took an all-terrain vehicle on wild rides through tall grass, loose gravel and mud to gather data about how the ATV interacted with a challenging, off-road environment.
+This work was supported through NASA Grant Number NNX17CL06C.</content><author><name>Azarakhsh Keipour</name></author><category term="research" /><summary type="html">The recent increase in the use of aerial vehicles raises concerns about the safety and reliability of autonomous operations. There is a growing need for methods to monitor the status of these aircraft and report any faults and anomalies to the safety pilot or to the autopilot to deal with the emergency situation.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2019-08-01-fault-detection/AnomalyDetection2018.jpg" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2019-08-01-fault-detection/AnomalyDetection2018.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Autonomous UAV-based Multi-Model High-Resolution Reconstruction for Aging Bridge Inspection</title><link href="http://0.0.0.0:4000/research/2020/01/31/shimizu/" rel="alternate" type="text/html" title="Autonomous UAV-based Multi-Model High-Resolution Reconstruction for Aging Bridge Inspection" /><published>2020-01-31T04:50:07-06:00</published><updated>2020-01-31T04:50:07-06:00</updated><id>http://0.0.0.0:4000/research/2020/01/31/shimizu</id><content type="html" xml:base="http://0.0.0.0:4000/research/2020/01/31/shimizu/">The conventional way of aging infrastructure (e.g. bridges and tunnels) inspection can be time-consuming and dangerous for humans. Therefore we are developing technologies to let UAVs help collect, process and analyze data automatically.  
+
+![drone](/img/posts/2020-01-31-shimizu/drone.png)
+*A customized DJI M210 drone carrying the designed payload, which contains stereo pair, rotating LiDAR, IMU and thermal camera.*
+&lt;!-- &lt;img src=&quot;/img/posts/2020-01-31-shimizu/drone.png&quot; alt=&quot;drone&quot; class=&quot;center&quot; width=&quot;500&quot;/&gt; --&gt;
+
+To achieve autonomy, we build UAVs with customized sensing payload (cameras, LiDAR, IMU, thermal sensors, etc.). Visual and LiDAR-based SLAM methods are applied to achieve real-time robust state estimation. Coverage planning algorithms ensure visual coverage of the surface being inspected.
+
+**LiDAR-enhanced Structure-from-Motion**: We augmented the traditional Structure-from-Motion pipeline with LiDAR information. Observations from both sensors are fused into a single cost function and optimize for all parameters simultaneously. Take a look at the reconstructed model of the Pearl Harbor Memorial Bridge Tunnel in Connecticut ([link](https://perceptron.ri.cmu.edu/project/shimizu/ct_bridge_new/merged/merged.html)).
+
+**DL aided Stereo**: To improve the robustness of stereo matching algorithms in low textured circumstances, we trained a deep neural network to predict the disparity uncertainity, which provide a guide for correspondance searching.  
+
+**2D-3D Localization**: We proposed a global 2D-3D registration method to estimate 2D-3D line correspondences and the camera pose in untextured point clouds of structured environments.
+
+On the inspection and analysis side, we are collaborating with Professor [Kenji Shimada](http://www.andrew.cmu.edu/user/shimada/) and [Kris Kitani](http://www.cs.cmu.edu/~kkitani/) for FEA and image-based crack detection.
+
+This project is sponsored by [Shimizu Institute of Technology](https://www.shimz.co.jp/en/company/about/sit/) in Tokyo, Japan.
+
+&lt;!-- ## Videos
+{% youtube dJaaF8POB64 %}
+{% youtube GUcKZ2PLPRQ %}
+{% youtube 7vx0hXDLCWY %}
+{% youtube XpGvhL5QHtQ %} --&gt;
+
+## Publications
+
+Zhen, W., Hu, Y., Liu, J. and Scherer, S.. **A joint optimization approach of lidar-camera fusion for accurate dense 3-d reconstructions**. IEEE Robotics and Automation Letters, 4(4), pp.3585-3592. [[PDF]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8760386) [[Video]](https://www.youtube.com/watch?v=dJaaF8POB64)
+
+Zhen, W., Hu, Y., Yu, H. and Scherer, S.. **LiDAR Enhanced Structure-from-Motion**. To appear in 2020 International Conference on Robotics and Automation (ICRA). IEEE. [[PDF]](https://arxiv.org/pdf/1911.03369.pdf) [[Video]](https://www.youtube.com/watch?v=GUcKZ2PLPRQ)
+
+Yu, H., Zhen, W., Yang, W. and Scherer, S.. **Line-based Camera Pose Estimation in Point Cloud of Structured Environments**. arXiv preprint arXiv:1912.05013. [[PDF]](https://arxiv.org/pdf/1912.05013.pdf) [[Video]](https://youtu.be/7vx0hXDLCWY)
+
+Hu, Y., Zhen, W. and Scherer, S.. **Deep-Learning Assisted High-Resolution Binocular Stereo Depth Reconstruction**. To appear in 2020 International Conference on Robotics and Automation (ICRA). IEEE. [[PDF]](https://arxiv.org/pdf/1912.05012.pdf) [[Video]](https://www.youtube.com/watch?v=XpGvhL5QHtQ)
+
+&lt;!-- ### Project Crews
+[Weikun Zhen](http://theairlab.org/team/weikun/), 
+[Yaoyu Hu](http://theairlab.org/team/yaoyuh/), 
+[Huai Yu](http://theairlab.org/team/huai/), 
+Jingfeng Liu, 
+Jumbin Yuan --&gt;
+
+&lt;!-- ## Sponsorship
+[&lt;img width=&quot;200&quot; src=&quot;https://www.shimz.co.jp/en/shared/images/shoulder_logo_en.svg&quot;&gt;](https://www.shimz.co.jp/en/company/about/sit/) --&gt;</content><author><name>Weikun Zhen</name></author><category term="research" /><summary type="html">The conventional way of aging infrastructure (e.g. bridges and tunnels) inspection can be time-consuming and dangerous for humans. Therefore we are developing technologies to let UAVs help collect, process and analyze data automatically.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2020-01-31-shimizu/models.jpg" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2020-01-31-shimizu/models.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Mapping and SLAM Datasets</title><link href="http://0.0.0.0:4000/slam_datasets/" rel="alternate" type="text/html" title="Mapping and SLAM Datasets" /><published>2018-05-05T05:50:07-05:00</published><updated>2018-05-05T05:50:07-05:00</updated><id>http://0.0.0.0:4000/slam-datasets</id><content type="html" xml:base="http://0.0.0.0:4000/slam_datasets/">Some mapping and SLAM related datasets from some of our previous publications.
+
+## Real-time 3D Scene Layout from a Single Image Using Convolutional Neural Networks
+
+**Publications:** 
+* Yang, S., Maturana, D. and Scherer, S., Real-time 3D Scene Layout from a Single Image Using Convolutional Neural Networks., International Conference on Robotics and automation (ICRA), 2016 
+
+**Dataset:** We assemble an image dataset (967 images) for corridor environments. All the images are annotated as ground or wall using polygons. More details and downloads could be found [here](https://drive.google.com/file/d/16yHVv2HIV2pqJj-Z1k8gRSb31enJeMdm/view?usp=sharing).
+
+## CubeSLAM
+
+**Publications:** 
+* Yang, S. and Scherer, S, CubeSLAM: Monocular 3D Object SLAM., IEEE Transactions on Robotics, 2019 [PDF](https://arxiv.org/abs/1806.00557)
+
+**Dataset:** Code and dataset [here](https://github.com/shichaoy/cube_slam).
+
+## Semantic 3D Mapping
+
+**Publications:** 
+* Yang, S., Huang, Y., and Sebastion, S,  Semantic 3D Occupancy Mapping through Efficient High Order CRFs, IROS 2017 [PDF](https://arxiv.org/pdf/1707.07388.pdf)
+
+**Dataset:** Code and dataset [here](https://github.com/shichaoy/semantic_3d_mapping).
+
+## Pop Up Slam
+
+**Publications:**
+* Pop-up SLAM: Semantic Monocular Plane SLAM for Low-texture Environments, IROS 2016, S. Yang, Y. Song, M. Kaess, S. Scherer [PDF](https://shichaoy.github.io/Publications/iros_2016_popslam.pdf)
+* Real-time 3D Scene Layout from a Single Image Using Convolutional Neural Networks, ICRA 2016, S. Yang, D. Maturana, S. Scherer [PDF](https://shichaoy.github.io/Publications/icra_2016_sinpop.pdf)
 
 
-The [dataset](https://github.com/castacks/tartan_drive) and the [paper](https://arxiv.org/abs/2205.01791) are openly available. Read more about it in our linked article below:
+**Dataset:** Code and dataset [here](https://github.com/shichaoy/pop_up_slam).
+
+
+
+
+
+### Contact
+
+Shichao Yang {shichaoy@andrew.cmu.edu}</content><author><name>Shichao Yang</name></author><category term="datasets" /><summary type="html">Some mapping and SLAM related datasets from some of our previous publications.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2018-05-05-slam-datasets/slamDataset.png" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2018-05-05-slam-datasets/slamDataset.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AirLab showcases research at the White House Frontiers Conference</title><link href="http://0.0.0.0:4000/obama/" rel="alternate" type="text/html" title="AirLab showcases research at the White House Frontiers Conference" /><published>2016-10-13T05:50:07-05:00</published><updated>2016-10-13T05:50:07-05:00</updated><id>http://0.0.0.0:4000/obama</id><content type="html" xml:base="http://0.0.0.0:4000/obama/">Proud to showcase our latest research to Obama and the White House team at the White House Frontiers Conference.  
+
 &lt;center&gt;
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We&amp;#39;ve been featured on &lt;a href=&quot;https://twitter.com/therobotreport?ref_src=twsrc%5Etfw&quot;&gt;@therobotreport&lt;/a&gt; with our off-road data-gathering endeavours. Check it out:&lt;a href=&quot;https://t.co/Q2T6S80jzt&quot;&gt;https://t.co/Q2T6S80jzt&lt;/a&gt;&lt;/p&gt;&amp;mdash; AirLab (@AirLabCMU) &lt;a href=&quot;https://twitter.com/AirLabCMU/status/1531788993259528192?ref_src=twsrc%5Etfw&quot;&gt;June 1, 2022&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-&lt;/center&gt;</content><author><name>Wenshan Wang</name></author><category term="highlights" /><summary type="html">We took an all-terrain vehicle on wild rides through tall grass, loose gravel and mud to gather data about how the ATV interacted with a challenging, off-road environment.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-05-03-tartandrive/tartandrive.png" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-05-03-tartandrive/tartandrive.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SubT UAV Code Release</title><link href="http://0.0.0.0:4000/research/2022/05/02/subt_code/" rel="alternate" type="text/html" title="SubT UAV Code Release" /><published>2022-05-02T05:50:07-05:00</published><updated>2022-05-02T05:50:07-05:00</updated><id>http://0.0.0.0:4000/research/2022/05/02/subt_code</id><content type="html" xml:base="http://0.0.0.0:4000/research/2022/05/02/subt_code/">This is the code accompanying the paper Resilient Multi-Sensor Exploration of Multifarious Environments with a Team of Aerial Robots [1]. This paper describes team Explorer&apos;s exploration strategy for a team of UAVs in the DARPA SubT competition. The code should be run on an Ubuntu 18.04 system with ROS melodic and OpenCL installed. The procedure for installing OpenCL depends on which type of GPU your system has. If you have an NVIDIA GPU and have CUDA installed, then you should already have OpenCL. You can check by doing `sudo apt install clinfo` and running `clinfo`. If it outputs a number of platforms found higher than 0, then OpenCL is installed.
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;President Obama interacting with technology &amp;amp; advising for &lt;br&gt;Pushing the bounds wherever possible.&lt;a href=&quot;https://twitter.com/hashtag/Keepitgoing?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Keepitgoing&lt;/a&gt;&lt;a href=&quot;https://twitter.com/hashtag/WHFrontiers?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#WHFrontiers&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/CMU?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#CMU&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/AIrlab?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#AIrlab&lt;/a&gt; &lt;a href=&quot;https://t.co/mfWEnBrhy0&quot;&gt;pic.twitter.com/mfWEnBrhy0&lt;/a&gt;&lt;/p&gt;&amp;mdash; AirLab (@airlabcmu) &lt;a href=&quot;https://twitter.com/airlabcmu/status/788530039444819968?ref_src=twsrc%5Etfw&quot;&gt;October 18, 2016&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/center&gt;</content><author><name>Cherie Ho</name></author><category term="highlights" /><summary type="html">Proud to showcase our latest research to Obama and the White House team at the White House Frontiers Conference.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2020-02-21-obama/obama-showcase.gif" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2020-02-21-obama/obama-showcase.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Autonomous Drone Safety</title><link href="http://0.0.0.0:4000/other/2016/05/01/autonomous-drone-safety/" rel="alternate" type="text/html" title="Autonomous Drone Safety" /><published>2016-05-01T05:50:07-05:00</published><updated>2016-05-01T05:50:07-05:00</updated><id>http://0.0.0.0:4000/other/2016/05/01/autonomous-drone-safety</id><content type="html" xml:base="http://0.0.0.0:4000/other/2016/05/01/autonomous-drone-safety/">Imagine flying robots traveling vast distances to deliver packages and taking pictures- doing work that is either too expensive, time-consuming, dangerous or even impossible for humans to do. Not so long ago this may have sounded like pure science fiction, but today it is a reality. The commercial, governmental and hobby use of drones has grown exponentially in the last few years as they have become more widely available, less expensive, more versatile, and have seen significant increases in their performance and battery life. As drone technology became more and more affordable and the equipment became more easily available, business quickly discovered that drones offered a low-cost, effective alternative to commercial aviation providers. 
 
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-05-02-subt_code/picture.png&quot; alt=&quot;uav&quot; /&gt;
-&lt;/figure&gt;
-
-
-### Building the Code Natively
-
-Download and build the code by running the following:
-
-&gt;
-git clone git@bitbucket.org:castacks/subt_uav.git \
-cd subt_uav/ \
-./install_dependencies.sh \
-./build.sh 
-&gt;
-
-### Running Examples Natively
-
-The following commands can be used to launch the UAV in different environments. The first time you launch everything, the gui below will not have the buttons highlighted in blue. To load the buttons, press the Open Config button highlighted in red and select gui.yaml from the open file dialog box. To avoid doing this each time you laucnh the sim, save the perspective using the the Perspectives drop down menu at the top, then selecting Export, and overwriting the core.perspective file.
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-05-02-subt_code/gui.png&quot; alt=&quot;GUI&quot; /&gt;
-&lt;/figure&gt;
-
-First run
-&gt;
-source devel/setup.bash
-&gt;
-
-To launch the UAV in a small room run:
-
-&gt;
-mon launch core_central sim_main.launch world:=~/subt/final_ws/src/core_gazebo_sim/worlds/room.world
-&gt;
-
-To launch the UAV in an indoor hallway environment run:
-
-&gt;
-mon launch core_central sim_main.launch world:=~/subt/final_ws/src/core_gazebo_sim/worlds/hawkins_qualification.world
-&gt;
-
-To launch the UAV in an indoor two story buliding run:
-
-&gt;
-mon launch core_central sim_main.launch world:=~/subt/final_ws/src/core_gazebo_sim/worlds/filmmakers2.world
-&gt;
-
-In addition to the gui shown above, rviz and gazebo windows will also launch and should look like the following:
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-05-02-subt_code/sim.png&quot; alt=&quot;rviz_gazebo&quot; /&gt;
-&lt;/figure&gt;
-
-
-### Building the Code in Docker
-
-Run:
-&gt;
-cd subt_uav \
-./docker_build.sh
-&gt;
-
-### Running Examples in Docker
-
-Run:
-&gt;
-cd subt_uav
-./docker_run.sh
-&gt;
-
-Inside docker, enter the workspace and source it:
-&gt;
-cd /home/ws \
-source devel/setup.bash
-&gt;
-
-Run a roscore. This can be done from outside docker.
-
-When you launch the following examples, add buttons to the gui the same way as described at the beginning of the Running Examples Natively section.
-
-To launch the UAV in a small room run:
-
-&gt;
-mon launch core_central sim_main.launch world:=/home/ws/src/core_gazebo_sim/worlds/room.world
-&gt;
-
-To launch the UAV in an indoor hallway environment run:
-
-&gt;
-mon launch core_central sim_main.launch world:=/home/ws/src/core_gazebo_sim/worlds/hawkins_qualification.world
-&gt;
-
-To launch the UAV in an indoor two story buliding run:
-
-&gt;
-mon launch core_central sim_main.launch world:=/home/ws/src/core_gazebo_sim/worlds/filmmakers2.world
-&gt;
-
-
-
-[1] G. Best, R. Garg, J. Keller, G. A. Hollinger, S. Scherer. &quot;Resilient Multi-Sensor Exploration of Multifarious Environments with a Team of Aerial Robots&quot;. Proc. Robotics: Science and Systems, 2022</content><author><name>AirLab</name></author><category term="research" /><summary type="html">This is the code accompanying the paper Resilient Multi-Sensor Exploration of Multifarious Environments with a Team of Aerial Robots [1]. This paper describes team Explorer’s exploration strategy for a team of UAVs in the DARPA SubT competition. The code should be run on an Ubuntu 18.04 system with ROS melodic and OpenCL installed. The procedure for installing OpenCL depends on which type of GPU your system has. If you have an NVIDIA GPU and have CUDA installed, then you should already have OpenCL. You can check by doing sudo apt install clinfo and running clinfo. If it outputs a number of platforms found higher than 0, then OpenCL is installed.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-05-02-subt_code/collage3c.png" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-05-02-subt_code/collage3c.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">TIGRIS: An Informed Sampling-based Algorithm for Informative Path Planning</title><link href="http://0.0.0.0:4000/tigris/" rel="alternate" type="text/html" title="TIGRIS: An Informed Sampling-based Algorithm for Informative Path Planning" /><published>2022-03-24T21:00:07-05:00</published><updated>2022-03-24T21:00:07-05:00</updated><id>http://0.0.0.0:4000/tigris</id><content type="html" xml:base="http://0.0.0.0:4000/tigris/">Informative path planning is an important and challenging problem in robotics that remains to be solved in a manner that allows for wide-spread implementation and real-world practical adoption. Among various reasons for this, one is the lack of approaches that allow for informative path planning in high-dimensional spaces and non-trivial sensor constraints. In this work we present a sampling-based approach that allows us to tackle the challenges of large and high-dimensional search spaces. This is done by performing informed sampling in the high-dimensional continuous space and incorporating potential information gain along edges in the reward estimation. This method rapidly generates a global path that maximizes information gain for the given path budget constraints. 
-
-
-&lt;!-- &lt;figure&gt;
- &lt;img src=&quot;/img/posts/2021-08-31-xplane-ros/front_view.png&quot; style=&quot;width:49%&quot; /&gt;
-  &lt;img src=&quot;/img/posts/2021-08-31-xplane-ros/side_view.png&quot; style=&quot;width:49%&quot; /&gt;
- &lt;figcaption&gt;
-XPlaneROS integrates XPlane 11 with ROSplane to enable higher-level autonomy in general aviation.
- &lt;/figcaption&gt;
-&lt;/figure&gt; --&gt;
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-03-25-tigris/fig-finalv4.jpg&quot; style=&quot;width:59%&quot; /&gt;
- &lt;figcaption&gt;
-An example scenario for an informative path planning problem of searching for a missing hiker. The UAV plans a path of maximum information gain over a prior belief distribution of the hiker&apos;s location.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-## Testing Implementation
-We implemented TIGRIS with the objective of reducing entropy with a bias toward increasing belief probabilities. Our data gathering is performed using a fixed wing UAV and a static forward facing camera.
-
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-03-25-tigris/SensorModelv4.png&quot; style=&quot;width:59%&quot; /&gt;
- &lt;figcaption&gt;
-A visualization of the edge reward approximation and variable definitions given a fixed forward-facing camera.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-## Testing
-We compare our approach to a sampling-based planner baseline and run 12,000 Monte Carlo simulations with 1-12 randomly placed target belief centroids. Through testing we show how our contributions allow our approach to consistently out-perform the baseline by 18.0%. An example test result is shown in the figure below. Detailed results and analysis can be found in our [paper](https://arxiv.org/abs/2203.12830).
-
-&lt;figure&gt;
- &lt;img src=&quot;/img/posts/2022-03-25-tigris/ExampleRunv8.png&quot; style=&quot;width:69%&quot; /&gt;
- &lt;figcaption&gt;
-Example results in the testing environment. Red regions are areas of high reward and blue is low reward. The blue lines is the TIGRIS solution and the pink line is baseline planner. The bottom right image shows a 3D view of the environment, and the bottom left graph shows the best path reward of the planners over time.
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-
-
-
-## Video
-The video below gives a general overview of the planner and visualization of a potential application.
-{% youtube bMw5nUGL5GQ %}
-
-Please refer to our [paper](https://arxiv.org/abs/2203.12830) for details.
-
-## Future Work
-Future work directions include replanning on the fly with TIGRIS, searching for and tracking moving target, local optimization of the final path, and local optimization over path segments within the planning framework.
-
-
-## Additional Info
-
-### Citation
-```
-@inproceedings{moon2022tigris,
-  doi = {10.48550/ARXIV.2203.12830},
-  url = {https://arxiv.org/abs/2203.12830.pdf},
-  author = {Moon, Brady and Chatterjee, Satrajit and Scherer, Sebastian},
-  title = {TIGRIS: An Informed Sampling-based Algorithm for Informative Path Planning},
-  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year = {2022},
-  video = {https://youtu.be/bMw5nUGL5GQ}
-}
-```
-
-
-### Contributors
-
-* [Brady Moon](https://theairlab.org/team/bradym/)
-
-* [Satrajit Chatterjee](https://www.linkedin.com/in/satrajit-chatterjee/)
-
-* [Dr. Sebastian Scherer](https://theairlab.org/team/sebastian/)
-
-
-### Term of use
-[BSD 4-Clause License](https://choosealicense.com/licenses/bsd-4-clause/)
-
-&lt;!-- &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;&lt;img alt=&quot;Creative Commons License&quot; style=&quot;border-width:0&quot; src=&quot;https://i.creativecommons.org/l/by/4.0/80x15.png&quot; /&gt;&lt;/a&gt;&lt;br /&gt;This work is licensed under a &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Creative Commons Attribution 4.0 International License&lt;/a&gt;. --&gt;</content><author><name>Brady Moon</name></author><category term="research" /><summary type="html">Informative path planning is an important and challenging problem in robotics that remains to be solved in a manner that allows for wide-spread implementation and real-world practical adoption. Among various reasons for this, one is the lack of approaches that allow for informative path planning in high-dimensional spaces and non-trivial sensor constraints. In this work we present a sampling-based approach that allows us to tackle the challenges of large and high-dimensional search spaces. This is done by performing informed sampling in the high-dimensional continuous space and incorporating potential information gain along edges in the reward estimation. This method rapidly generates a global path that maximizes information gain for the given path budget constraints.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-03-25-tigris/IROSCover8.png" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-03-25-tigris/IROSCover8.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AirObject: A Temporally Evolving Graph Embedding for Object Identification</title><link href="http://0.0.0.0:4000/airobject/" rel="alternate" type="text/html" title="AirObject: A Temporally Evolving Graph Embedding for Object Identification" /><published>2022-03-15T07:00:00-05:00</published><updated>2022-03-15T07:00:00-05:00</updated><id>http://0.0.0.0:4000/airobject</id><content type="html" xml:base="http://0.0.0.0:4000/airobject/">&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-15-airobject/obj_1_org.gif&quot; /&gt;
-    &lt;figcaption&gt;
-       Video Object Identification
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-Object encoding and identification are vital for robotic tasks such as autonomous exploration, semantic scene understanding, and re-localization. Previous approaches have attempted to either track objects or generate descriptors for object identification. However, such systems are limited to a &quot;fixed&quot; object representation from a single viewpoint and are not robust to severe occlusion, viewpoint shift, perceptual aliasing, or scale transform. These single frame representations tend to lead to false correspondences amongst perceptually-aliased objects, especially when severely occluded. Hence, we propose one of the first temporal object encoding methods, **AirObject**, that aggregates the temporally &quot;evolving&quot; object structure as the camera or object moves. The AirObject descriptors, which accumulate knowledge across multiple evolving representations of the objects, are robust to severe occlusion, viewpoint changes, deformation, perceptual aliasing, and the scale transform.
-
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-15-airobject/overview.jpg&quot; /&gt;
-    &lt;figcaption&gt;
-        Matching Temporally Evolving Representations using AirObject
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-## Topological Object Representations
-
-Intuitively, a group of feature points on an object form a graphical representation where the feature points are nodes and their associated descriptors are the node features. Essentially, the graph&apos;s nodes are the distinctive local features of the object, while the edges/structure of the graph represents the global structure of the object. Hence, to learn the geometric relationship of the feature points, we construct topological object graphs for each frame using Delaunay triangulation. The obtained triangular mesh representation enables the graph attention encoder to reason better about the object&apos;s structure, thereby making the final temporal object descriptor robust to deformation or occlusion.
-
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-15-airobject/triangulation.png&quot; /&gt;
-    &lt;figcaption&gt;
-        Topological Graph Representations of Objects. These representations are generated by using Delaunay Triangulation on object-wise grouped SuperPoint keypoints.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-## Simple &amp; Effective Temporal Object Encoding Method
-
-Our proposed method is very simple and only contains three modules. Specifically, we use extracted deep learned keypoint features across multiple frames to form sequences of object-wise topological graph neural networks (GNNs), which on embedding generate temporal object descriptors. We employ a graph attention-based sparse encoding method on these topological GNNs to generate content graph features and location graph features representing the structural information of the object. Then, these graph features are aggregated across multiple frames using a single-layer temporal convolutional network to generate a temporal object descriptor. These generated object descriptors are robust to severe occlusion, perceptual aliasing, viewpoint shift, deformation, and scale transform, outperforming the state-of-the-art single-frame and sequential descriptors.
-
-&lt;figure&gt;
-    &lt;figcaption&gt;
-       Video Object Identification
-    &lt;/figcaption&gt;
-    &lt;img src=&quot;/img/posts/2022-03-15-airobject/obj_2.gif&quot; /&gt;
-    &lt;img src=&quot;/img/posts/2022-03-15-airobject/obj_3.gif&quot; /&gt;
-    &lt;img src=&quot;/img/posts/2022-03-15-airobject/obj_4.gif&quot; /&gt;
-&lt;/figure&gt;
-
-## Video
-
-{% youtube lTEXcKW_aWg %}
-
-## Publication
-
-```
-@inproceedings{keetha2022airobject,
-  title     = {AirObject: A Temporally Evolving Graph Embedding for Object Identification},
-  author    = {Keetha, Nikhil Varma and Wang, Chen and Qiu, Yuheng and Xu, Kuan and Scherer, Sebastian}, 
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year      = {2022},
-  url       = {https://arxiv.org/abs/2111.15150}}
-```
-
-Please refer to our [Paper](https://arxiv.org/abs/2111.15150) and [Code](https://github.com/Nik-V9/AirObject) for details.
-
-## Contact
-
- - [Nikhil Varma Keetha](https://nik-v9.github.io/) &lt;keethanikhil [at] gmail [dot] com&gt;
- - [Chen Wang](https://chenwang.site) &lt;chenwang [at] dr.com&gt;
- - [Sebastian Scherer](http://theairlab.org/team/sebastian/) &lt;basti [at] cmu [dot] edu&gt;</content><author><name>Nikhil Varma Keetha</name></author><category term="research" /><summary type="html">Video Object Identification</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-03-15-airobject/obj_1_org.gif" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-03-15-airobject/obj_1_org.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Air Series Articles Released</title><link href="http://0.0.0.0:4000/airseries/" rel="alternate" type="text/html" title="Air Series Articles Released" /><published>2022-03-12T00:00:00-06:00</published><updated>2022-03-12T00:00:00-06:00</updated><id>http://0.0.0.0:4000/air-series</id><content type="html" xml:base="http://0.0.0.0:4000/airseries/">**Air Series** is a collection of **articles mentored by [Chen Wang](https://chenwang.site)**.
-
-A wide variety of topics in **robotics** are covered, including **localization**, **detection**, and **lifelong learning**.
-
-All articles are **first authored by Undergraduate or Master students** and **second authored by Chen Wang**.
-
-
-&lt;style&gt;
-.csl-block {
-    font-size: 16px;
-}
-.csl-title, .csl-author, .csl-event, .csl-editor, .csl-venue {
-    display: block;
-    position: relative;
-    font-size: 15px;
-}
-
-.csl-title b {
-    font-weight: 600;
-}
-
-.csl-content {
-    display: inline-block;
-    vertical-align: top;
-    padding-left: 20px;
-}
-
-.bibliography {
-   list-style-type: none;
-}
-&lt;/style&gt;
-
-
-## Air Series Articles
-
-{% bibliography --query @*[keywords=airseries] %}
-
-
-### First Author Information (When work was done)
-
-* [Bowen Li](https://jaraxxus-me.github.io/)
-   * RISS intern at Carnegie Mellon University.
-   * Junior student at Tongji University, China.
-   * Now: Incoming PhD student of [CMU RI](https://www.ri.cmu.edu/).
-
-* [Nikhil Varma Keetha](https://www.linkedin.com/in/nikhil-varma-keetha-612685193/)
-   * RISS intern at Carnegie Mellon University.
-   * Junior student at Indian Institute of Technology Dhanbad.
-   * Now: Incoming Master student of [CMU RI](https://www.ri.cmu.edu/).
-
-* [Dasong Gao](https://scholar.google.com/citations?user=_loctXsAAAAJ&amp;hl=en)
-   * Master student at Carnegie Mellon University.
-   * Now: Incoming PhD student of [MIT EECS](https://www.eecs.mit.edu/).
-
-* [Yuheng Qiu](https://scholar.google.com/citations?user=aEK45mEAAAAJ)
-   * Undergraduate of Chinese University of Hong Kong.
-   * Now: PhD student of [CMU ME](https://www.meche.engineering.cmu.edu/).
-
-* Kuan Xu
-   * Master Graduate of Harbin Institute of Technology, China.
-   * Engineer at Tencent and Geekplus.
-   * Now: Incoming PhD student of [NTU EEE](https://www.ntu.edu.sg/eee).
-
-
-### Contribution
-
-
-* **AirDet: Few-shot Detection without Fine-tunning**
-
-   * The first practical few-shot object detection method that requires no fine-tunning.
-   * It achieves even better results than the exhaustively fine-tuned methods (up to 60% improvements).
-   * Validated on real world sequences from DARPA Subterranean (SubT) challenge.
-
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-12-air-series/AirDet.gif&quot; /&gt;
-    &lt;figcaption&gt;
-        Only three examples are given for novel object detection without fine-tunning.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-* **AirObject: Temporal Object Embedding**
-
-   * The first temporal object embedding method.
-   * It achieves the state-of-the-art performance for video object identification.
-   * Robust to severe occlusion, perceptual aliasing, viewpoint shift, deformation, and scale transform.
-   * [Project Page](/airobject)
-
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-12-air-series/AirObject.gif&quot; /&gt;
-    &lt;figcaption&gt;
-        Temporal object matching on videos.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-* **AirDOS: Dynamic Object-aware SLAM (DOS) system**
-
-   * The first DOS system showing that camera pose estimation can be improved by incorporating dynamic articulated objects.
-   * Establish 4-D dynamic object maps.
-   * [Project Page](/airdos)
-
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-12-air-series/AirDOS.gif&quot; /&gt;
-    &lt;figcaption&gt;
-        Dynamic Objects can correct the camera pose estimation.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-* **AirLoop: Lifelong Learning for Robots**
-
-   * The first lifelong learning method for loop closure detection.
-   * Model incremental improvement even after deployment.
-   * [Project Page](/airloop)
-
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2021-09-28-airloop/tartanair-ll.gif&quot; /&gt;
-    &lt;figcaption&gt;
-        The model is able to correct previously made mistakes after learning more environments.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-* **AirCode: Robust Object Encoding**
-
-   * The first deep point-based object encoding for single image.
-   * It achieves the state-of-the-art performance for object re-identification.
-   * Robust to viewpoint shift, object deformation, and scale transform.
-   * [Project Page](/aircode)
-
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2021-10-06-aircode/object-matching1.gif&quot; /&gt;
-    &lt;img src=&quot;/img/posts/2021-10-06-aircode/object-matching2.gif&quot; /&gt;
-    &lt;figcaption&gt;
-        A human matching demo.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-Congratulations to the above young researchers!
-
-More information can be found at the [research page](/research).</content><author><name>Chen Wang</name></author><category term="research" /><summary type="html">Air Series is a collection of articles mentored by Chen Wang.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-03-12-air-series/AirDet-16x9.gif" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-03-12-air-series/AirDet-16x9.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">3D Human Reconstruction with Collaborative Aerial Cameras</title><link href="http://0.0.0.0:4000/multidrone/" rel="alternate" type="text/html" title="3D Human Reconstruction with Collaborative Aerial Cameras" /><published>2022-03-07T06:00:00-06:00</published><updated>2022-03-07T06:00:00-06:00</updated><id>http://0.0.0.0:4000/multidrone</id><content type="html" xml:base="http://0.0.0.0:4000/multidrone/">Aerial vehicles are revolutionizing applications that require capturing the 3D structure of dynamic targets in the wild, such as sports, medicine and entertainment. The core challenges in developing a motion-capture system that operates in outdoors environments are: (1) 3D inference requires multiple simultaneous viewpoints of the target, (2) occlusion caused by obstacles is frequent when tracking moving targets, and (3) the camera and vehicle state estimation is noisy. We present a real-time aerial system for multi-camera control that can reconstruct human motions in natural environments without the use of special-purpose markers.
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-07-multidrone/poster-demo.gif&quot; /&gt;
-    &lt;figcaption&gt;
-        We present a multi-drone motion capture system for 3D human reconstruction in the wild. Our framework coordinates 
-aerial cameras to optimally reconstruct the target’s body pose while avoiding obstacles and occlusions outdoors.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-## Multi-camera coordination
-
-We formulate a multi-camera coordination scheme with the goal of maximizing the reconstructed 3D pose quality of dynamic targets. We develop a scalable two-stage system with long planning time horizons and real-time performance that uses a centralized planner for formation control and a decentralized trajectory optimizer that runs on each robot.
-
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-07-multidrone/real-life-flight.png&quot; /&gt;
-    &lt;figcaption&gt;
-        Real-life flight among obstacle. Our adaptive formation rotates clockwise avoiding the mound to maintain optimal reconstruction angle.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-We provide studies evaluating system performance in simulation, and validate real-world performance using two drones while a target performs activities such as jogging and playing soccer.
-&lt;figure&gt;
-    &lt;img src=&quot;/img/posts/2022-03-07-multidrone/reconstruction-dynamic.png&quot; /&gt;
-    &lt;figcaption&gt;
-        3D reconstruction of a highly dynamic target
-playing soccer.
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-## Video
-
-{% youtube jxt91vx0cns %}
-
-## Additional Info
-
-### Citation
-```
-@inproceedings{ho2021_human3d,
-  author = {Ho, Cherie and Jong, Andrew and Freeman, Harry and Rao, Rohan and Bonatti, Rogerio and Scherer, Sebastian},
-  title = {3D Human Reconstruction in the Wild with Collaborative Aerial Cameras},
-  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year = {2021},
-  month = sep,
-  url = {https://arxiv.org/abs/2108.03936},
-  video = {https://youtu.be/jxt91vx0cns}
-}
-```
-
-
-Please refer to our [paper](https://arxiv.org/pdf/2108.03936.pdf) for details.
-
-
-### Contributors
-
- - [Cherie Ho](https://cherieho.com) &lt;cherieh [at] cmu [dot] edu&gt;
- - Andrew Jong
- - Harry Freeman
- - Rohan Rao
- - Rogerio Bonatti
- - [Prof. Sebastian Scherer](http://theairlab.org/team/sebastian/) &lt;basti [at] cmu [dot] edu&gt;</content><author><name>Rebecca Martin</name></author><category term="research" /><summary type="html">Aerial vehicles are revolutionizing applications that require capturing the 3D structure of dynamic targets in the wild, such as sports, medicine and entertainment. The core challenges in developing a motion-capture system that operates in outdoors environments are: (1) 3D inference requires multiple simultaneous viewpoints of the target, (2) occlusion caused by obstacles is frequent when tracking moving targets, and (3) the camera and vehicle state estimation is noisy. We present a real-time aerial system for multi-camera control that can reconstruct human motions in natural environments without the use of special-purpose markers. We present a multi-drone motion capture system for 3D human reconstruction in the wild. Our framework coordinates aerial cameras to optimally reconstruct the target’s body pose while avoiding obstacles and occlusions outdoors.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/img/posts/2022-03-07-multidrone/poster-demo.gif" /><media:content medium="image" url="http://0.0.0.0:4000/img/posts/2022-03-07-multidrone/poster-demo.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+The use of drones was quickly adopted by the film and television industry, with sports broadcasting and law enforcement soon realizing the value and implementing the use of drones in their operations. Scientists have adopted the use of drones to monitor wildlife and to collect data in dangerous situations they have not had access to before such as inside a live volcano. As a basic concept, the idea of an Unmanned Aerial Vehicle (UAV or “drone”) is “childishly” simple: a miniature plane that can be piloted remotely. The major difference between UAVs and the toys of our childhood is the sophistication of the vehicles themselves and of their navigation and pilot systems. Given that these vehicles enter civil airspace and will continue to do so more and more as they begin to be used for an increasing number of civilian activities, the safety and security of UAV software has become critical. It’s paramount that we raise the stakes in terms of the inherent safety of these systems to avoid collisions, and formal guarantees on the &lt;span class=&quot;skimlinks-unlinked&quot;&gt;safety.This&lt;/span&gt; expansion in UAV’s challenges the FAA’s goal “to provide the safest, most efficient aerospace system in the world.” With no human pilot onboard, the control software is chiefly responsible for maintaining UAV safety and security. As demanded by FAA airworthiness rules and the military, as well as for operations close to humans, it is generally necessary to make strong assertions about the safety of a system. This expansion in UAV’s challenges the FAA’s goal “to provide the safest, most efficient aerospace system in the world.” With no human pilot onboard, the control software is chiefly responsible for maintaining UAV safety and security. As demanded by FAA airworthiness rules and the military, as well as for operations close to humans, it is generally necessary to make strong assertions about the safety of a &lt;span class=&quot;skimlinks-unlinked&quot;&gt;system.The&lt;/span&gt;FAA’s policy statement focused on safety concerns posed by the widespread use of UAVs, which the FAA noted “range in size from wingspans of six inches to 246 feet; and can weigh from approximately four ounces to over 25,600 pounds.” The rapid proliferation of UAV’s also worried the FAA, which noted that in 2007, at least 50 companies, universities, and government organizations were developing and producing some 155 unmanned aircraft designs. “The concern was not only that unmanned aircraft operations might interfere with commercial and general aviation aircraft operations,” wrote the FAA, “but that they could also pose a safety problem for other airborne vehicles, and persons or property on the ground.” The major primary safety concerns arising from the use of UAVs in the United States are:  Inability for UAVs to recognize and avoid other aircraft and airborne objects in a manner similar to manned aircraft;  Vulnerabilities in the command and control of UAV operations. In other words, GPS-jamming, hacking and the potential for cyber-terrorism;  Difficulties in guaranteeing the safety of the system  Complexity of autonomy algorithms and challenges in designing an autonomy architecture for certification. One of the primary consequences of the separation between aircraft and operator is that the operator is deprived of a range of sensory cues that are available to the pilot of a manned aircraft. Therefore, a robot must be able to reliably detect and recognize obstacles before it can avoid them. Rather than receiving direct sensory input from the environment in which his/her vehicle is operating, a UAV operator receives only that sensory information provided by onboard sensors via datalink. Currently, this consists primarily of visual imagery covering a restricted field-of-view. Sensory cues that are lost therefore include ambient visual information, kinesthetic/vestibular input, and sound. As compared to the pilot of a manned aircraft, thus, a UAV operator can be said perform in relative “sensory isolation” from the vehicle under his/her control. Some of the environmental challenges faced by the Drones are from different weather conditions like fog, wind while it can also face a lot of small obstacles on its way. Flying in wind can be difficult and in particular challenges the control and autonomy algorithms to guarantee that correct execution is possible. Collision avoidance is an important requirement for autonomous flights. Although multiple solutions for obstacle detection and collision avoidance of UAV’s exist, these solutions suffer from different drawbacks. In general, the existing solutions can be divided into two types: The first type contains simple collision avoidance solutions which are based on avoiding collisions by steering the vehicle into opposite direction using different techniques. The biggest drawback of such solutions is that it is challenging to guarantee that these steering/reactive methods will reach a goal and that the combined avoidance behavior will avoid all obstacles under all situations. The second type can be described as a search or optimization algorithm based solution. These solutions avoid collisions by mapping, positioning, and planning within a map. Planning enables the drones to deliberately avoid collisions. Compared to the first type, these solutions do not limit the mission, but the collision avoidance requires a more precise understanding of the world and potentially requires considerable memory and computational power compared to the already mentioned simple solutions. Software developed for use in larger drones falls under the guidelines of DO-178, “Software Considerations in Airborne Systems and Equipment Certification.” Both DO-178B and the recently ratifiedSoftware developed for use in larger drones falls under the guidelines of DO-178, “Software Considerations in Airborne Systems and Equipment Certification.” Both DO-178B and the recently ratified DO-178C provide detailed guidelines for the production of all software for airborne systems and equipment, whether safety-critical or not. As part of these guidelines, DO-178B/C defines Design Assurance Levels (DALs) with Level A involving the most rigorous safeguard against failure. Software developed for use in larger drones falls under the guidelines of DO-178, “Software Considerations in Airborne Systems and Equipment Certification.” Both DO-178B and the recently ratified DO-178C provide detailed guidelines for the production of all software for airborne systems and equipment, whether safety-critical or not. As part of these guidelines, DO-178B/C defines Design Assurance Levels (DALs) with Level A involving the most rigorous safeguard against failure. One of the challenges in guaranteeing that autonomous drone software is safe is that the number of test cases required for autonomy algorithms makes their exhaustive generation or testing infeasible with simple methods. The “smartness” of the drone is essentially the number of different behavior the drone can choose from. These choices make verification challenging. Another challenge in DO-178 verification is that the typical fallback for a failure in avionics systems is to hand back control to the pilot. However, for an autonomous drone flying out of line-of-sight this is not an option anymore. One of the focus areas of the AirLab at Carnegie Mellon is to develop safe drones and technologies. Over the years, we have developed many collision avoidance algorithms to avoid collision with the terrain from small quadrotors[4] to medium sized helicopters[5], and full-scale autonomous helicopters[6]. More recently, our group has also started to focus on giving stronger guarantees for the safety of an autonomous system. In particular, we have looked at if we can show the safety trajectories being disturbed by wind[7], guaranteeing avoidance of late detected wires[8], and showing the correctness of motion algorithms . &lt;strong&gt;Authors &lt;/strong&gt; Sebastian Scherer Sahil Nyati &lt;strong&gt;References&lt;/strong&gt; 1) Calhoun, G.L., Draper, M.H., Ruff, H.A., &amp;amp; Fontejon, J.V. (2002). Utility of a tactile display for cueing faults. Proceedings of the Human Factors and Ergonomics Society 46th Annual Meeting,2144-2148. 2) Van Erp, J.B.F., &amp;amp; Van Breda, L. (1999). Human factors issues and advanced interface design in maritime unmanned aerial vehicles: A project overview (Report TNO TM-99-A004). Soesterberg, The Netherlands: TNO Human Factors Research Institute. 3) Pitchford, Mark. “What’s Needed to Ensure Safety and Security in UAV Software.” Military EmbeddedSystems. 4) Stephen T. Nuske, Sanjiban Choudhury, Sezal Jain, Andrew D. Chambers, Luke Yoder, Sebastian Scherer, Lyle J. Chamberlain,Hugh Cover, and Sanjiv Singh, “Autonomous Exploration and Motion Planning for an Unmanned Aerial Vehicle Navigating Rivers,” Journal of Field Robotics, June, 2015 5) Sebastian Scherer, Sanjiv Singh, Lyle J. Chamberlain, and Mike Elgersma, “Flying Fast and Low Among Obstacles: Methodology and Experiments,” The International Journal of Robotics Research, Vol. 27, No. 5, pp. 549-574, May, 2008 6) Sankalp Arora, Sanjiban Choudhury, Sebastian Scherer, and Daniel Althoff, “A Principled Approach to Enable Safe and High-Performance Maneuvers for Autonomous Rotorcraft,” AHS 70th Annual Forum, Montre ́al, Que ́bec, Canada, May 20–22, May, 2014 7) Daniel Althoff and Sebastian Scherer, “Connected Invariant Sets for High-Speed Motion Planning in Partially-Known Environments,” 2015 IEEE International Conference on Robotics and Automation, March, 2015 8) Daniel Althoff, Matthias Althoff, and Sebastian Scherer, “Online Safety Verification of Trajectories for Unmanned Flight with Offline Computed Robust Invariant Sets,” IEEE/RSJ International Conference on Intelligent Robots and Systems, September, 2015</content><author><name>AirLab</name></author><category term="other" /><summary type="html">Imagine flying robots traveling vast distances to deliver packages and taking pictures- doing work that is either too expensive, time-consuming, dangerous or even impossible for humans to do. Not so long ago this may have sounded like pure science fiction, but today it is a reality. The commercial, governmental and hobby use of drones has grown exponentially in the last few years as they have become more widely available, less expensive, more versatile, and have seen significant increases in their performance and battery life. As drone technology became more and more affordable and the equipment became more easily available, business quickly discovered that drones offered a low-cost, effective alternative to commercial aviation providers.</summary></entry></feed>
