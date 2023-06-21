@@ -1,7 +1,7 @@
 # Site Settings
-title: AirLab
-tagline: We build intelligent autonomous robots
-email: contact@theairlab.org
+title: BIGLab
+tagline: roBot Intelligence Group
+email: 
 description: >
   Researching, developing, and testing autonomous robots at Carnegie Mellon University
 baseurl:
@@ -16,7 +16,7 @@ disqus:
   # Leave shortname blank to disable comments site-wide.
   # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
   # shortname: my_disqus_shortname
-  shortname: theairlab
+  shortname: biglab
 
 
 plugins:
@@ -57,7 +57,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      author: "AirLab"
+      author: "BIGLab"
       layout: post
       show_sidebar: true
 
