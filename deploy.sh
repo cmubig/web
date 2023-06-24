@@ -20,7 +20,7 @@ if [ $last_commit -ge $last_push ]; then
     git remote add origin git@github.com:castacks/castacks.github.io.git
     touch .nojekyll
     touch CNAME
-    echo "cmubig-website.github.io" >> CNAME
+    echo "web.github.io" >> CNAME
     git add -A
     git commit -m "Auto deploy"
     git push origin master -f

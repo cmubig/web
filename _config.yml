@@ -5,7 +5,7 @@ email:
 description: >
   Researching, developing, and testing autonomous robots at Carnegie Mellon University
 baseurl:
-url: "https://cmubig.github.io/web/"
+url: "https://cmubig.github.io/web"
 permalink: pretty
 
 paginate: 5
