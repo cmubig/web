@@ -1,20 +1,21 @@
 - name: Research
-  link: /research/
+  link: /web/research/
 - name: Publications
-  link: /publications/
+  link: /web/publications/
 - name: News
-  link: /news/
+  link: /web/news/
 - name: Team
-  link: /current-members/
+  link: /web/current-members/
   dropdown:
     - name: Current Members
-      link: /current-members/
+      link: /web/current-members/
     - name: Alumni
-      link: /alumni/
+      link: /web/alumni/
 - name: Contact
-  link: /contact/
+  link: /web/contact/
 - name: Openings
-  link: /openings/
+  link: /web/openings/
+
 # - name: Seminars
 #   dropdown:
 #     - name: Tartan Planning Series

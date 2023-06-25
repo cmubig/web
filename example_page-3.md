@@ -6,11 +6,11 @@ show_sidebar: false
 menubar: example_menu
 ---
 
-This is another sample page showing how a page can look with a menubar. 
+This is another sample page showing how a page can look with a menubar.
 
 ## Displaying a menubar
 
-The menubar gets its content from a data file in your site's `_data` directory. Simply set the name of your data file in the page's menubar setting in the frontmatter. 
+The menubar gets its content from a data file in your site's `_data` directory. Simply set the name of your data file in the page's menubar setting in the frontmatter.
 
 ```yml
 title: Page with menubar
@@ -20,7 +20,7 @@ show_sidebar: false
 menubar: example_menu
 ```
 
-You will probably want to disable the show_sidebar otherwise there will be little room for the page's content. 
+You will probably want to disable the show_sidebar otherwise there will be little room for the page's content.
 
 ## Creating a menubar data file
 
