@@ -3,6 +3,7 @@
  * Copyright 2015-2020, Christian Fei
  * Licensed under the MIT License.
  */
+
 !(function () {
   "use strict";
   var f = {
@@ -18,19 +19,19 @@
         "function" == typeof t.middleware && (i.middleware = t.middleware);
     },
   };
-  const i = { pattern: /\{(.*?)\}/g, template: "", middleware: function () {} };
+  const i = { pattern: /\{(.*?)\}/g, template: "", middleware: function () { } };
   var n = function (t, e) {
-      var n = e.length,
-        r = t.length;
-      if (n < r) return !1;
-      if (r === n) return t === e;
-      t: for (var i = 0, o = 0; i < r; i++) {
-        for (var u = t.charCodeAt(i); o < n; )
-          if (e.charCodeAt(o++) === u) continue t;
-        return !1;
-      }
-      return !0;
-    },
+    var n = e.length,
+      r = t.length;
+    if (n < r) return !1;
+    if (r === n) return t === e;
+    t: for (var i = 0, o = 0; i < r; i++) {
+      for (var u = t.charCodeAt(i); o < n;)
+        if (e.charCodeAt(o++) === u) continue t;
+      return !1;
+    }
+    return !0;
+  },
     e = new (function () {
       this.matches = function (t, e) {
         return n(e.toLowerCase(), t.toLowerCase());
@@ -41,9 +42,9 @@
         return (
           !!e &&
           ((e = e.trim().toLowerCase()),
-          (t = t.trim().toLowerCase()).split(" ").filter(function (t) {
-            return 0 <= e.indexOf(t);
-          }).length === t.split(" ").length)
+            (t = t.trim().toLowerCase()).split(" ").filter(function (t) {
+              return 0 <= e.indexOf(t);
+            }).length === t.split(" ").length)
         );
       };
     })(),
@@ -71,26 +72,26 @@
       search: function (t) {
         return t
           ? (function (e, n, r, i) {
-              const o = [];
-              for (let t = 0; t < e.length && o.length < i.limit; t++) {
-                var u = (function (t, e, n, r) {
-                  for (const i in t)
-                    if (
-                      !(function (n, r) {
-                        for (let t = 0, e = r.length; t < e; t++) {
-                          var i = r[t];
-                          if (new RegExp(i).test(n)) return !0;
-                        }
-                        return !1;
-                      })(t[i], r.exclude) &&
-                      n.matches(t[i], e)
-                    )
-                      return t;
-                })(e[t], n, r, i);
-                u && o.push(u);
-              }
-              return o;
-            })(u, t, c.searchStrategy, c).sort(c.sort)
+            const o = [];
+            for (let t = 0; t < e.length && o.length < i.limit; t++) {
+              var u = (function (t, e, n, r) {
+                for (const i in t)
+                  if (
+                    !(function (n, r) {
+                      for (let t = 0, e = r.length; t < e; t++) {
+                        var i = r[t];
+                        if (new RegExp(i).test(n)) return !0;
+                      }
+                      return !1;
+                    })(t[i], r.exclude) &&
+                    n.matches(t[i], e)
+                  )
+                    return t;
+              })(e[t], n, r, i);
+              u && o.push(u);
+            }
+            return o;
+          })(u, t, c.searchStrategy, c).sort(c.sort)
           : [];
       },
       setOptions: function (t) {
@@ -142,27 +143,27 @@
     };
   }
   var m = function y(t) {
-      if (
-        !(e = t) ||
-        !("undefined" != typeof e.required && e.required instanceof Array)
-      )
-        throw new Error("-- OptionsValidator: required options missing");
-      var e;
-      if (!(this instanceof y)) return new y(t);
-      const r = t.required;
-      (this.getRequiredOptions = function () {
-        return r;
-      }),
-        (this.validate = function (e) {
-          const n = [];
-          return (
-            r.forEach(function (t) {
-              "undefined" == typeof e[t] && n.push(t);
-            }),
-            n
-          );
-        });
-    },
+    if (
+      !(e = t) ||
+      !("undefined" != typeof e.required && e.required instanceof Array)
+    )
+      throw new Error("-- OptionsValidator: required options missing");
+    var e;
+    if (!(this instanceof y)) return new y(t);
+    const r = t.required;
+    (this.getRequiredOptions = function () {
+      return r;
+    }),
+      (this.validate = function (e) {
+        const n = [];
+        return (
+          r.forEach(function (t) {
+            "undefined" == typeof e[t] && n.push(t);
+          }),
+          n
+        );
+      });
+  },
     w = {
       merge: function (t, e) {
         const n = {};
@@ -180,23 +181,23 @@
     };
   !(function (t) {
     let i = {
-        searchInput: null,
-        resultsContainer: null,
-        json: [],
-        success: Function.prototype,
-        searchResultTemplate:
-          '<li><a href="{url}"><h1>{title}</h1></li>',
-        // searchResultTemplate: '<div><a href="{url}"><h1>{title}</h1></a><span>{author}</span></div>',
-        templateMiddleware: Function.prototype,
-        sortMiddleware: function () {
-          return 0;
-        },
-        noResultsText: "No results found",
-        limit: 10,
-        fuzzy: !1,
-        debounceTime: null,
-        exclude: [],
+      searchInput: null,
+      resultsContainer: null,
+      json: [],
+      success: Function.prototype,
+      searchResultTemplate:
+        '<li><a href="{url}"><h1>{title}</h1></li>',
+      // searchResultTemplate: '<div><a href="{url}"><h1>{title}</h1></a><span>{author}</span></div>',
+      templateMiddleware: Function.prototype,
+      sortMiddleware: function () {
+        return 0;
       },
+      noResultsText: "No results found",
+      limit: 10,
+      fuzzy: !1,
+      debounceTime: null,
+      exclude: [],
+    },
       n;
     const e = function (t, e) {
       e ? (clearTimeout(n), (n = setTimeout(t, e))) : t.call();
@@ -208,9 +209,9 @@
         i.searchInput.addEventListener("input", function (t) {
           -1 === [13, 16, 20, 37, 38, 39, 40, 91].indexOf(t.which) &&
             (c(),
-            e(function () {
-              l(t.target.value);
-            }, i.debounceTime));
+              e(function () {
+                l(t.target.value);
+              }, i.debounceTime));
         });
     }
     function c() {
@@ -224,11 +225,11 @@
       (e = t) &&
         0 < e.length &&
         (c(),
-        (function (e, n) {
-          var r = e.length;
-          if (0 === r) return s(i.noResultsText);
-          for (let t = 0; t < r; t++) (e[t].query = n), s(f.compile(e[t]));
-        })(d.search(t), t));
+          (function (e, n) {
+            var r = e.length;
+            if (0 === r) return s(i.noResultsText);
+            for (let t = 0; t < r; t++) (e[t].query = n), s(f.compile(e[t]));
+          })(d.search(t), t));
     }
     function a(t) {
       throw new Error("SimpleJekyllSearch --- " + t);
