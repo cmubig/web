@@ -9,7 +9,6 @@ hero_height: is-medium
 hero_image: ./img/homepage_slideshow.gif
 hero_link: /research/
 hero_link_text: See Our Research
-
 hero_link2: /current-members/
 hero_link_text2: See Our Team
 ---
