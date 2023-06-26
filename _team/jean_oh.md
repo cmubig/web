@@ -7,20 +7,37 @@ layout: team_member_personal_page
 image: /img/team/Jean.jpg
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+Jean Oh is an Associate Research Professor at the Robotics Institute at Carnegie
+Mellon University. Jean is passionate about creating persistent robots that can
+co-exist and collaborate with humans in shared environments, continuously
+learning to improve themselves over time through training, exploration,
+and interactions. Toward this general goal, her current research is focused on
+the topics at the intersection among vision, language, and planning in robotics.
+
+Jean has been leading several robot intelligence tasks in government, defense,
+and commercial projects in various problem domains including human-robot teaming,
+self-driving cars, disaster response, eldercare, and arts. Jean heads an
+interdisciplinary research group, Bot Intelligence Group (BIG), that includes
+postdoctoral researchers, PhD, MS, and undergraduate students from the Robotics
+Institute, Language Technologies Institute, Computer Science Department, Machine
+Learning Department, School of Information Science, and Mechanical Engineering
+Department.
+
+Jean's team has won two Best Paper Awards in Cognitive Robotics at
+IEEE International Conference on Robotics and Automation (ICRA) in 2015 and 2018
+for the works on following natural language directions in unknown environments
+and socially-compliant robot navigation in human crowds, in 2015 and 2018,
+respectively. Jean received her Ph.D. in Language and Information Technologies
+at Carnegie Mellon University, M.S. in Computer Science at Columbia University,
+and B.S. in Biotechnology at Yonsei University in South Korea.
 
 ## Email ##
 
-<!-- <ajong@andrew.cmu.edu> -->
+<jeanoh@andrew.cmu.edu>
 
 ## LinkedIn ##
 
-<!-- [https://www.linkedin.com/in/ajong/](https://www.linkedin.com/in/ajong/) -->
+[https://www.linkedin.com/in/jean-oh-23299512/](https://www.linkedin.com/in/jean-oh-23299512/)
 
 ## Website ##
 
@@ -28,4 +45,4 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 ## GitHub ##
 
-<!-- [https://github.com/andrewjong](https://github.com/andrewjong) -->
+[https://github.com/cmubig](https://github.com/cmubig)
