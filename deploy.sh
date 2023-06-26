@@ -2,10 +2,10 @@
 source ~/.bashrc
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd $DIR
-rm -rf airlab-temp
+rm -rf biglab-temp
 
-git clone git@github.com:castacks/website-dev.git airlab-temp
-cd airlab-temp
+git clone git@github.com:castacks/website-dev.git biglab-temp
+cd biglab-temp
 last_commit=$(git log -1 --format="%at" | xargs -I{} date -d @{} +%s)
 git clone git@github.com:castacks/castacks.github.io.git _site
 cd _site
@@ -23,15 +23,15 @@ if [ $last_commit -ge $last_push ]; then
     echo "web.github.io" >> CNAME
     git add -A
     git commit -m "Auto deploy"
-    git push origin master -f
+    git push origin main -f
     cd ../../
-    rm -rf airlab-temp
+    rm -rf biglab-temp
     echo "Pushed changes!"
   else
     echo "Failed to push!"
   fi
 else
   cd ../../
-  rm -rf airlab-temp
+  rm -rf biglab-temp
   echo "Up to date!"
 fi 
