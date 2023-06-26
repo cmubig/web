@@ -4,8 +4,8 @@ tagline: roBot Intelligence Group
 email: 
 description: >
   Researching, developing, and testing autonomous robots at Carnegie Mellon University
-baseurl: "https://cmubig.github.io/web"
-url: "https://cmubig.github.io/web"
+baseurl: /web
+url: "https://cmubig.github.io"
 permalink: pretty
 
 paginate: 5
@@ -17,7 +17,6 @@ disqus:
   # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
   # shortname: my_disqus_shortname
   shortname: biglab
-
 
 plugins:
   - jekyll-sitemap
@@ -40,7 +39,7 @@ exclude:
 livereload: true
 
 sass:
-  style: compressed
+  style: compressedme
   source_dir: _sass
 
 google_analytics: G-ERWFHDG4GX
@@ -72,7 +71,6 @@ collections:
     layout: product
     image: https://via.placeholder.com/800x600
     show_sidebar: false
-
 
 scholar:
   style: simple-ieee.csl

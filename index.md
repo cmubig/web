@@ -17,7 +17,8 @@ hero_link_text2: See Our Team
 
 Our mission is to advance state-of-the-art autonomy.
 
-We are proud to be part of the [Robotics Institute](https://www.ri.cmu.edu/) at [Carnegie Mellon University](https://www.cmu.edu/).
+We are proud to be part of the [Robotics Institute](https://www.ri.cmu.edu/)
+at [Carnegie Mellon University](https://www.cmu.edu/).
 
 # Highlights
 
