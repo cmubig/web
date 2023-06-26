@@ -5,6 +5,7 @@ job_title: Associate Research Professor
 category: lab_head
 layout: team_member_personal_page
 image: /img/team/Jean.jpg
+keywords: "keyword1 keyword2 keyword3"
 ---
 
 Jean Oh is an Associate Research Professor at the Robotics Institute at Carnegie
