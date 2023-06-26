@@ -1,20 +1,20 @@
 - name: Research
-  link: /web/research/
+  link: /research/
 - name: Publications
-  link: /web/publications/
+  link: /publications/
 - name: News
-  link: /web/news/
+  link: /news/
 - name: Team
-  link: /web/current-members/
+  link: /current-members/
   dropdown:
     - name: Current Members
-      link: /web/current-members/
+      link: /current-members/
     - name: Alumni
-      link: /web/alumni/
+      link: /alumni/
 - name: Contact
-  link: /web/contact/
+  link: /contact/
 - name: Openings
-  link: /web/openings/
+  link: /openings/
 
 # - name: Seminars
 #   dropdown:

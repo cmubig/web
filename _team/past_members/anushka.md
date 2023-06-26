@@ -7,7 +7,10 @@ layout: team_member_personal_page
 image: /img/team/past_members/blank-profile-picture.png
 link-new-tab: true
 ---
-Hi, I'm Anushka. I'm a pre-final year undergraduate student at SRM Univeristy. My research goals are inclined towards **Deep  Learning**, **Computer Vision** , **Human-computer Interactions** and **Robotics** and am actively looking for research problems to solve.
+Hi, I'm Anushka. I'm a pre-final year undergraduate student at SRM Univeristy.
+My research goals are inclined towards **Deep  Learning**, **Computer Vision**
+, **Human-computer Interactions** and **Robotics** and am actively looking for
+research problems to solve.
 
 For a brief overview of my profile, feel free to visit:
 
