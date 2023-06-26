@@ -1,24 +1,32 @@
 ---
-title: Aditya Rauniyar
+title: Ben
 subtitle: Master's Student
 job_title: Master's Student
 category: master_student
 layout: team_member_personal_page
-image: /img/team/blank-profile-picture.png
+image: /img/team/Ben.jpg
 link-new-tab: true
 ---
-Hi there, this is Adi.
 
-I'm a graduate student at the [Robotics Institute](https://www.ri.cmu.edu "Robotics Institute Homepage"), Carnegie Mellon University, pursuing a Master's in Robotics (MSR). I graduated from SRM University in 2020, where I worked with Prof. S. Prabhu on collaborative manipulation for warehouse robots.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
 
-My research interest lies in the intersection between multi-agent systems, planning, and machine learning. I would like to develop cooperative systems that make 2 + 2 = 5.
+## Email ##
 
-If you would like to have a chat on any of these topics, or just play soccer, feel free to reach out!
+<!-- <ajong@andrew.cmu.edu> -->
 
-[Email](mailto:rauniyar@cmu.edu)
+## LinkedIn ##
 
-[LinkedIn](https://www.linkedin.com/in/adi32/)
+<!-- [https://www.linkedin.com/in/ajong/](https://www.linkedin.com/in/ajong/) -->
 
-[GitHub](https://github.com/adityarauniyar)
+## Website ##
 
-[Google Scholar](https://scholar.google.com/citations?user=j0u4CgMAAAAJ&hl=en)
+<!-- [https://andrewjong.github.io](https://andrewjong.github.io) -->
+
+## GitHub ##
+
+<!-- [https://github.com/andrewjong](https://github.com/andrewjong) -->
