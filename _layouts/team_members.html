@@ -25,11 +25,9 @@ show_sidebar: false
         </div>
         {% endif %}
         <div class="card-content">
-
           <p class="title is-5">{{ product.title }}</h2>
           <p class="subtitle is-6">{{ product.subtitle }}</p>
-          <p class="subtitle is-6">{{ product.keywords }}</p>
-
+          <p class="" style="font-size: 12px;">{{ product.keywords }}</p>
         </div>
       </div>
     </a>
@@ -58,6 +56,7 @@ show_sidebar: false
         <div class="card-content">
           <p class="title is-6">{{ person.title }}</h2>
           <p class="subtitle is-6">{{ person.subtitle }}</p>
+          <p class="" style="font-size: 12px;">{{ product.keywords }}</p>
         </div>
       </div>
     </a>
@@ -84,6 +83,7 @@ show_sidebar: false
         <div class="card-content">
           <p class="title is-5">{{ product.title }}</h2>
           <p class="subtitle is-5">{{ product.subtitle }}</p>
+          <p class="" style="font-size: 12px;">{{ product.keywords }}</p>
         </div>
       </div>
     </a>
@@ -110,6 +110,7 @@ show_sidebar: false
         <div class="card-content">
           <p class="title is-6">{{ product.title }}</h2>
           <p class="subtitle is-6">{{ product.subtitle }}</p>
+          <p class="" style="font-size: 12px;">{{ product.keywords }}</p>
         </div>
       </div>
     </a>
@@ -133,6 +134,7 @@ show_sidebar: false
         <div class="card-content">
           <p class="title is-6">{{ product.title }}</h2>
           <p class="subtitle is-6">{{ product.subtitle }}</p>
+          <p class="" style="font-size: 12px;">{{ product.keywords }}</p>
         </div>
       </div>
     </a>
@@ -159,6 +161,7 @@ show_sidebar: false
         <div class="card-content">
           <p class="title is-6">{{ product.title }}</h2>
           <p class="subtitle is-6">{{ product.subtitle }}</p>
+          <p class="" style="font-size: 12px;">{{ product.keywords }}</p>
         </div>
       </div>
     </a>
@@ -175,7 +178,8 @@ show_sidebar: false
   {% assign sorted_products = sorted_visitor | concat: sorted_intern %}
   {% for product in sorted_products %}
   <div class="column is-one-fifth-desktop is-6-tablet">
-    <a href="{% if product.redirect %}{{ product.redirect }}{% else %}{{ product.url | prepend: site.baseurl }}{% endif %}">
+    <a
+      href="{% if product.redirect %}{{ product.redirect }}{% else %}{{ product.url | prepend: site.baseurl }}{% endif %}">
       <div class="card">
         {% if product.image %}
         <div class="card-image">
@@ -187,7 +191,7 @@ show_sidebar: false
         <div class="card-content">
           <p class="title is-6">{{ product.title }}</h2>
           <p class="subtitle is-6">{{ product.subtitle }}</p>
-          <p class="subtitle is-6">{{ product.caption }}</p>
+          <p class="" style="font-size: 12px;">{{ product.keywords }}</p>
         </div>
       </div>
     </a>
@@ -215,6 +219,7 @@ show_sidebar: false
         <div class="card-content">
           <p class="title is-6">{{ product.title }}</h2>
           <p class="subtitle is-6">{{ product.subtitle }}</p>
+          <p class="" style="font-size: 12px;">{{ product.keywords }}</p>
         </div>
       </div>
     </a>

@@ -6,7 +6,7 @@ category: intern
 layout: team_member_personal_page
 image: /img/team/allen_chang.jpg
 redirect: http://www.cylumn.com
-caption: Language and Vision, HRI
+keywords: Language and Vision, HRI
 link-new-tab: true
 ---
 <script>

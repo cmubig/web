@@ -1,32 +1,22 @@
 ---
-title: Tanmay
+title: Tanmay Shankar
 subtitle: Ph.D. Student
 job_title: Ph.D. Student
 category: phd_student
 layout: team_member_personal_page
 image: /img/team/Tanmay.jpg
 link-new-tab: true
+keywords: keyword1 keyword2 keyword3
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+Hi! I’m Tanmay. My Ph.D. research aims to learn and translate temporal
+abstractions (such as skills) across humans and robots. For more details,
+check out my [website](tanmayshankar.github.io)!
 
-## Email ##
+[Email](mailto:tanmayshankar@cmu.edu)
 
-<!-- <ajong@andrew.cmu.edu> -->
+[Website](tanmayshankar.github.io)
 
-## LinkedIn ##
+[GitHub](https://github.com/tanmayshankar)
 
-<!-- [https://www.linkedin.com/in/ajong/](https://www.linkedin.com/in/ajong/) -->
-
-## Website ##
-
-<!-- [https://andrewjong.github.io](https://andrewjong.github.io) -->
-
-## GitHub ##
-
-<!-- [https://github.com/andrewjong](https://github.com/andrewjong) -->
+[Google Scholar](‪https://scholar.google.co.in/citations?user=0k1qcvgAAAAJ&hl=en)
