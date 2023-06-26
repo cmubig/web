@@ -4,7 +4,7 @@ tagline: roBot Intelligence Group
 email: 
 description: >
   Researching, developing, and testing autonomous robots at Carnegie Mellon University
-baseurl: /web
+baseurl:
 url: "https://cmubig.github.io"
 permalink: pretty
 
