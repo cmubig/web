@@ -1,11 +1,14 @@
 ---
-title: Abby
+title: Jon
 subtitle: Ph.D. Student
 job_title: Ph.D. Student
-category: phd_student
+category: past_phd
 layout: team_member_personal_page
-image: /img/team/Abby.png
+image: /img/team/alumni/jon.png
 link-new-tab: true
+current_status: 
+starting_year: 
+graduation_year: 
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

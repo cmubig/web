@@ -4,7 +4,7 @@ subtitle: Associate Research Professor
 job_title: Associate Research Professor
 category: lab_head
 layout: team_member_personal_page
-image: /img/team/Jean.png
+image: /img/team/jean.png
 keywords: keyword1 keyword2 keyword3
 ---
 
