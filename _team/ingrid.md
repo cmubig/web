@@ -1,32 +1,18 @@
 ---
-title: Ingrid
+title: Ingrid Navarro
 subtitle: Ph.D. Student
 job_title: Ph.D. Student
 category: phd_student
 layout: team_member_personal_page
 image: /img/team/Ingrid.jpg
 link-new-tab: true
+keywords: Social-Navigation Motion-Prediction
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+I’m a 3rd year doctoral student at the Robotics Institute.
 
-## Email ##
+[Email](ingridn@cs.cmu.edu)
 
-<!-- <ajong@andrew.cmu.edu> -->
+[GitHub](https://github.com/navarrs)
 
-## LinkedIn ##
-
-<!-- [https://www.linkedin.com/in/ajong/](https://www.linkedin.com/in/ajong/) -->
-
-## Website ##
-
-<!-- [https://andrewjong.github.io](https://andrewjong.github.io) -->
-
-## GitHub ##
-
-<!-- [https://github.com/andrewjong](https://github.com/andrewjong) -->
+[Website](https://navars.xyz)
