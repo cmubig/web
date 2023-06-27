@@ -4,7 +4,7 @@ subtitle: Master's Student
 job_title: Master's Student
 category: master_student
 layout: team_member_personal_page
-image: /img/team/Ben.jpg
+image: /img/team/Ben.png
 link-new-tab: true
 ---
 

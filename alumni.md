@@ -17,7 +17,7 @@ hide_footer: false
     <div class="card">
       {% if person.image %}
       <div class="card-image">
-        <figure class="image is-4by3">
+        <figure class="image is-4by4">
           <img src="{{ person.image }}" alt="{{ person.title }}" />
         </figure>
       </div>
@@ -44,7 +44,7 @@ hide_footer: false
     <div class="card">
       {% if person.image %}
       <div class="card-image">
-        <figure class="image is-4by3">
+        <figure class="image is-4by4">
           <img src="{{ person.image }}" alt="{{ person.title }}" />
         </figure>
       </div>
@@ -71,7 +71,7 @@ hide_footer: false
     <div class="card">
       {% if person.image %}
       <div class="card-image">
-        <figure class="image is-4by3">
+        <figure class="image is-4by4">
           <img src="{{ person.image }}" alt="{{ person.title }}" />
         </figure>
       </div>

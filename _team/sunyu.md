@@ -4,7 +4,7 @@ subtitle: Ph.D. Student
 job_title: Ph.D. Student
 category: phd_student
 layout: team_member_personal_page
-image: /img/team/blank-profile-picture.png
+image: /img/team/Sunyu.png
 link-new-tab: true
 keywords: keyword1 keyword2 keyword3
 ---

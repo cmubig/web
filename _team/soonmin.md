@@ -1,32 +1,31 @@
 ---
-title: Soonmin
-subtitle: Ph.D. Student
-job_title: Ph.D. Student
-category: phd_student
+title: Soonmin Hwang
+subtitle: Postdoc
+job_title: Postdoc
+category: postdoc
 layout: team_member_personal_page
-image: /img/team/Soonmin.jpeg
+image: /img/team/Soonmin.png
 link-new-tab: true
+keywords: keyword1 keyword2 keyword3
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+My name is Soonmin Hwang. I am a postdoctoral visitor at the Robotics Institute
+with Prof. Jean Oh. Before joining Carnegie Mellon University, I worked for Tesla
+(Palo Alto, CA, USA) as a Senior Machine Learning Scientist.
 
-## Email ##
+I received my M.S. and Ph.D. degrees in Electrical Engineering from KAIST
+(Daejeon, South Korea) under the supervision of Prof. In So Kweon in 2014 and
+2019, respectively. I was an intern at Qualcomm Research Austria (Vienna, Austria)
+in 2016. I received my B.S. degree in Electronics and Computer Engineering from
+Hanyang University (Seoul, South Korea) in 2012.
 
-<!-- <ajong@andrew.cmu.edu> -->
+I’m diving deep into research on robust perception and data-centric AI for
+autonomous driving, including computer vision, deep learning, and sensor fusion.
+My vision is to realize fully autonomous driving, holding the potential to
+significantly transform our everyday lives.
 
-## LinkedIn ##
+[Email](mailto:soonminh@andrew.cmu.edu)
 
-<!-- [https://www.linkedin.com/in/ajong/](https://www.linkedin.com/in/ajong/) -->
+[Website](https://soonminhwang.github.io)
 
-## Website ##
-
-<!-- [https://andrewjong.github.io](https://andrewjong.github.io) -->
-
-## GitHub ##
-
-<!-- [https://github.com/andrewjong](https://github.com/andrewjong) -->
+[Google Scholar](https://scholar.google.co.kr/citations?user=XkY5-sUAAAAJ)
