@@ -2,7 +2,7 @@
 title: Nariaki Kitamura
 subtitle: Ph.D. Student
 job_title: Ph.D. Student
-category: past_phd
+category: past_visitor
 layout: team_member_personal_page
 image: /img/team/alumni/Nariaki_Kitamura.png
 link-new-tab: true

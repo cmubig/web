@@ -1,32 +1,21 @@
 ---
-title: Ben
-subtitle: Master's Student
-job_title: Master's Student
-category: master_student
+title: Ben Stoler
+subtitle: Ph.D. Student
+job_title: Ph.D. Student
+category: phd_student
 layout: team_member_personal_page
 image: /img/team/Ben.png
 link-new-tab: true
+keywords: Social-Navigation Motion-Prediction 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+I currently study social robot navigation, where I research ways of improving perception, 
+planning, and evaluation methodologies for robots which navigate among humans. Previously, 
+I have worked in operating systems and reinforcement learning research, at University of 
+Michigan as well as Johns Hopkins University Applied Physics Laboratory. 
 
-## Email ##
+[Email](mailto:bstoler@cs.cmu.edu)
 
-<!-- <ajong@andrew.cmu.edu> -->
+[Website](https://benstoler.com/)
 
-## LinkedIn ##
-
-<!-- [https://www.linkedin.com/in/ajong/](https://www.linkedin.com/in/ajong/) -->
-
-## Website ##
-
-<!-- [https://andrewjong.github.io](https://andrewjong.github.io) -->
-
-## GitHub ##
-
-<!-- [https://github.com/andrewjong](https://github.com/andrewjong) -->
+[Google Scholar](https://scholar.google.com/citations?user=7wztq0UAAAAJ)
