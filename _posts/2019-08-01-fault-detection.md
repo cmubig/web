@@ -1,20 +1,30 @@
 ---
 layout: post
-title:  "Real-time Fault Detection for Autonomous Aerial Vehicles"
+title:  "Add a title here"
 date:   2020-07-15 10:50:07
 categories: research
-description: "Real-time Fault Detection for Autonomous Aerial Vehicles"
-author: "Azarakhsh Keipour"
+description: "Add a ddiscription here"
+author: "Author name"
 published: true
 sidebar:  true
-permalink: /fault-detection/
-image: /img/posts/2019-08-01-fault-detection/AnomalyDetection2018.jpg
+permalink: /research-article1/
+image: /img/posts/placeholder-image.jpeg
 link-new-tab: true
 ---
 
-The recent increase in the use of aerial vehicles raises concerns about the safety and reliability of autonomous operations. There is a growing need for methods to monitor the status of these aircraft and report any faults and anomalies to the safety pilot or to the autopilot to deal with the emergency situation.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
 
-In this project, we developed a real-time approach to detecting anomalies in the behavior of an aircraft. Additionally, we created and published a dataset of the 47 flight sequences where the anomalies happen. Our anomaly detection method is based on the Recursive Least Squares. The approach models the relationship between correlated input-output pairs online and uses the model to detect the anomalies. The result is an easy-to-deploy anomaly detection method that does not assume a specific aircraft model and can detect many types of faults and anomalies in a wide range of autonomous aircraft. The experiments on this method show a precision of 88.23%, recall of 88.23% and 86.36% accuracy for over 22 flight tests. For more details about the work, please refer to the publications below.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
 
 More information about the dataset is available [here](../alfa-dataset).
 
