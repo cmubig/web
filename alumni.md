@@ -26,6 +26,7 @@ hide_footer: false
         <p class="title is-5">{{ person.title }}</p>
         <p class="subtitle is-5">{{ person.starting_year }}-{{ person.graduation_year }}</p>
         <p class="subtitle is-5">{{ person.current_status }}</p>
+        <p class="" style="font-size: 12px;">{{ person.keywords }}</p>
       </div>
     </div>
   </a>
@@ -53,6 +54,7 @@ hide_footer: false
         <p class="title is-5">{{ person.title }}</p>
         <p class="subtitle is-5">{{ person.starting_year }}-{{ person.graduation_year }}</p>
         <p class="subtitle is-5">{{ person.current_status }}</p>
+        <p class="" style="font-size: 12px;">{{ person.keywords }}</p>
       </div>
     </div>
   </a>
@@ -80,6 +82,34 @@ hide_footer: false
         <p class="title is-5">{{ person.title }}</p>
         <p class="subtitle is-5">{{ person.starting_year }}-{{ person.graduation_year }}</p>
         <p class="subtitle is-5">{{ person.current_status }}</p>
+        <p class="" style="font-size: 12px;">{{ person.keywords }}</p>
+      </div>
+    </div>
+  </a>
+</div>
+{% endfor %}
+</div>
+
+<hr>
+<h1 style="font-size:35px;">Past Visitors and Affiliates</h1>
+<br>
+<div class="columns is-multiline">
+{% assign sorted_person = site.team | where:"category","past_visitor" | sort: "graduation_year" | reverse %}
+{% for person in sorted_person %}
+<div class="column is-one-fifth-desktop is-6-tablet">
+  <a href="{{ person.url | prepend: site.baseurl }}">
+    <div class="card">
+      {% if person.image %}
+      <div class="card-image">
+        <figure class="image is-4by4">
+          <img src="{{ person.image }}" alt="{{ person.title }}" />
+        </figure>
+      </div>
+      {% endif %}
+      <div class="card-content">
+        <p class="title is-5">{{ person.title }}</p>
+        <p class="subtitle is-5">{{ person.job_title }}</p>
+        <p class="" style="font-size: 12px;">{{ person.keywords }}</p>
       </div>
     </div>
   </a>

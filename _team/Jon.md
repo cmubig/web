@@ -1,11 +1,10 @@
 ---
-title: Sam Shum
-subtitle: NREC robotics engineer
-job_title: NREC robotics engineer
-category: nrec_robotics
+title: Jon Francis
+subtitle: Bosch Center for AI
+job_title: Collaborator
+category: collaborators
 layout: team_member_personal_page
 image: /img/team/blank-profile-picture.png
-keywords: keyword1 keyword2 keyword3
 link-new-tab: true
 ---
 

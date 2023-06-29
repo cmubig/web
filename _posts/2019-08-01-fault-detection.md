@@ -6,7 +6,7 @@ categories: research
 description: "Real-time Fault Detection for Autonomous Aerial Vehicles"
 author: "Azarakhsh Keipour"
 published: true
-sidebar:  false
+sidebar:  true
 permalink: /fault-detection/
 image: /img/posts/2019-08-01-fault-detection/AnomalyDetection2018.jpg
 link-new-tab: true

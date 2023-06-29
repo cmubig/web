@@ -1,10 +1,10 @@
 ---
-title: Jimin
+title: Emily
 subtitle: Ph.D. Student
 job_title: Ph.D. Student
-category: phd_student
+category: past_phd
 layout: team_member_personal_page
-image: /img/team/Jimin.png
+image: /img/team/alumni/Emily.png
 link-new-tab: true
 ---
 
