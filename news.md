@@ -5,11 +5,21 @@ layout: page
 show_sidebar: false
 hide_footer: false
 ---
-<center>
-   <a class="twitter-timeline" data-width="600" data-height="600" href="https://twitter.com/FridaRobot">Tweets by FRIDA
-      Robot Painter</a>
-   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</center>
+
+## Twitter Highlights
+
+<table>
+  <tr>
+   <td> 
+      <a class="twitter-timeline" data-width="600" data-height="600" href="https://twitter.com/CMUBigLab">Tweets by CMU BIG Lab</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+   </td>
+   <td>
+      <a class="twitter-timeline" data-width="600" data-height="600" href="https://twitter.com/FridaRobot">Tweets by FRIDA Robot Painter</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+   </td>
+  </tr>
+ </table>
 
 ## News Highlights
 
