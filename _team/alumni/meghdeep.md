@@ -1,5 +1,5 @@
 ---
-title: Meghdeep
+title: Meghdeep Jana
 subtitle: Masters Student in Mechanical Engineering
 job_title: Masters Student in Mechanical Engineering
 category: past_master

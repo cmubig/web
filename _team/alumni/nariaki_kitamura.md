@@ -1,7 +1,7 @@
 ---
 title: Nariaki Kitamura
-subtitle: Research Assistant
-job_title: Research Assistant
+subtitle: Visiting Researcher
+job_title: Visiting Researcher
 category: past_visitor
 layout: team_member_personal_page
 image: /img/team/alumni/Nariaki_Kitamura.png

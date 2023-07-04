@@ -1,5 +1,5 @@
 ---
-title: Abby
+title: Xinjie (Abby) Yao
 subtitle: Masters Student in Robotics
 job_title: Masters Student in Robotics
 category: past_master

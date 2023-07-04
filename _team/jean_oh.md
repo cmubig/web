@@ -40,10 +40,6 @@ and B.S. in Biotechnology at Yonsei University in South Korea.
 
 [https://www.linkedin.com/in/jean-oh-23299512/](https://www.linkedin.com/in/jean-oh-23299512/)
 
-## Website ##
-
-<!-- [https://andrewjong.github.io](https://andrewjong.github.io) -->
-
 ## GitHub ##
 
 [https://github.com/cmubig](https://github.com/cmubig)
