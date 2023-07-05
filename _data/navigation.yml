@@ -15,16 +15,3 @@
   link: /contact/
 - name: Openings
   link: /openings/
-
-# - name: Seminars
-#   dropdown:
-#     - name: Tartan Planning Series
-#       link: /tartanplanningseries/
-#     - name: Tartan SLAM Series Fall Edition
-#       link: /tartanslamseries2/
-#     - name: Tartan SLAM Series
-#       link: /tartanslamseries/
-#     - name: Summer School 2020
-#       link: /summer2020/
-# - name: Datasets
-#   link: /datasets/
