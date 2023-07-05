@@ -1,8 +1,8 @@
 <p class="title is-4">Latest Research</p>
 
-<div class="columns is-multiline">
+<div class="columns auto">
     {% for post in site.posts limit:3 %}
-    <div class="column is-12">
+    <div class="column auto">
         {% include post-card.html %}
     </div>
     {% endfor %}
