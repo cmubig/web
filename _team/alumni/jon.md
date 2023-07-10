@@ -6,7 +6,7 @@ category: past_phd
 layout: team_member_personal_page
 image: /img/team/alumni/jon.png
 link-new-tab: true
-current_status: Robotics Engineer at Bosch
+current_status: Senior Research Scientist at Bosch Center for AI
 graduation_year: 2022
-keywords: Representation Learning and Embodied AI
+keywords: Representation Learning, Embodied AI, Autonomous Driving
 ---
