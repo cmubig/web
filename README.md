@@ -19,7 +19,7 @@ View the site here: `http://0.0.0.0:4000`
 First install Jekyll according to [these instructions](https://jekyllrb.com/docs/installation/).
 
 ```bash
-git clone https://github.com/castacks/website-dev
+git clone https://github.com/cmubig/cmubig.github.io.git
 cd website-dev
 bundle install
 bundle exec jekyll serve --watch --incremental
