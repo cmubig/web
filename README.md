@@ -20,7 +20,7 @@ First install Jekyll according to [these instructions](https://jekyllrb.com/docs
 
 ```bash
 git clone https://github.com/cmubig/cmubig.github.io.git
-cd website-dev
+cd cmubig.github.io
 bundle install
 bundle exec jekyll serve --watch --incremental
 ```
