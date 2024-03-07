@@ -42,8 +42,6 @@ sass:
   style: compressedme
   source_dir: _sass
 
-google_analytics: G-ERWFHDG4GX
-
 defaults:
   -
     scope:
