@@ -4,7 +4,7 @@ subtitle: Associate Research Professor
 job_title: Associate Research Professor
 category: lab_head
 layout: team_member_personal_page
-image: /img/team/jean.png
+image: /img/team/jean.jpg
 keywords: Social Robot Navigation, Creative AI for Robotics, Robotics for Human Values
 ---
 
