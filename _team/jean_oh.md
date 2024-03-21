@@ -5,7 +5,7 @@ job_title: Associate Research Professor
 category: lab_head
 layout: team_member_personal_page
 image: /img/team/jean.png
-keywords: keyword1 keyword2 keyword3
+keywords: Social robot navigation, Creative AI for Robotics, Robotics for Human Values
 ---
 
 Jean Oh is an Associate Research Professor at the Robotics Institute at Carnegie
@@ -34,7 +34,7 @@ and B.S. in Biotechnology at Yonsei University in South Korea.
 
 ## Email ##
 
-<jeanoh@andrew.cmu.edu>
+<jeanoh@cmu.edu>
 
 ## LinkedIn ##
 
