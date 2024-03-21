@@ -5,6 +5,6 @@ layout: team_members
 show_sidebar: false
 hide_footer: false
 sort: subtitle
-hero_image: /img/big-summer2018.jpg
+hero_image: /img/BIG2023.jpg
 hero_height: is-medium
 ---
