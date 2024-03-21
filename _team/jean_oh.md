@@ -5,7 +5,7 @@ job_title: Associate Research Professor
 category: lab_head
 layout: team_member_personal_page
 image: /img/team/jean.png
-keywords: Social robot navigation, Creative AI for Robotics, Robotics for Human Values
+keywords: Social Robot Navigation, Creative AI for Robotics, Robotics for Human Values
 ---
 
 Jean Oh is an Associate Research Professor at the Robotics Institute at Carnegie
