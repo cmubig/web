@@ -10,7 +10,7 @@ hero_image: ./img/big-homepage_gif.gif
 hero_link: /publications/
 hero_link_text: Our Research
 hero_link2: /current-members/
-hero_link_text2: See Our Team
+hero_link_text2: Our Team
 ---
 
 # About Us
