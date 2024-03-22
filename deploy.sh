@@ -17,7 +17,7 @@ if [ $last_commit -ge $last_push ]; then
   if [ -d "_site" ]; then
     cd _site
     git init
-    git remote add origin git@github.com:castacks/castacks.github.io.git
+    git remote add origin git@github.com:cmubig/cmubig.github.io.git
     touch .nojekyll
     touch CNAME
     echo "web.github.io" >> CNAME
