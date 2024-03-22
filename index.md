@@ -1,12 +1,12 @@
 ---
-title: BIG Lab
-subtitle: Bot Intelligence Group
+title: CMU BIG
+subtitle: roBot Intelligence Group
 layout: page
 show_sidebar: false
 hide_footer: false
 hero_height: is-medium
 # hero_height: is-large
-hero_image: ./img/homepage_slideshow.gif
+hero_image: ./img/big-homepage_gif.gif
 hero_link: /research/
 hero_link_text: See Our Research
 hero_link2: /current-members/
