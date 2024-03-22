@@ -1,6 +1,6 @@
 ---
-title: BIG Lab
-subtitle: Bot Intelligence Group
+title: CMU BIG
+subtitle: roBot Intelligence Group
 layout: page
 show_sidebar: false
 hide_footer: false
