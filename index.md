@@ -15,16 +15,13 @@ hero_link_text2: Our Team
 
 # About Us
 
-The main theme of research in Bot Intelligence Group (BIG) is to develop robotic intelligence ranging 
-from the low-level autonomy to the high-level cognitive abilities. We aim to develop robots that can 
-cooperate or collaborate with humans in shared environments, learning to improve themselves over time 
-through continual on- and off-line training, exploration, and interactions with humans and/or environments. 
+The roBot Intelligence Group (BIG) is a robotics research lab led by [Jean Oh](https://www.cs.cmu.edu/~jeanoh/) at the [Robotics Institute](https://www.ri.cmu.edu/)
+at [Carnegie Mellon University](https://www.cmu.edu/).
+At BIG, we aim to develop robots that can collaborate with humans in shared environments, learning to improve themselves over time through continual on- and off-line training, exploration, and interactions with humans and environments. 
 Towards this general goal, we strive to answer research questions on how to make robots to understand 
 various semantic contexts of physical and/or social environments, act in both task-effective and 
 socially-compliant manners, and communicate their internal states with other agents in intuitive ways.
 
-We are proud to be part of the [Robotics Institute](https://www.ri.cmu.edu/)
-at [Carnegie Mellon University](https://www.cmu.edu/).
 
 ## Research areas 
 
