@@ -8,9 +8,9 @@ hide_footer: false
 hero_height: is-large
 hero_image: ./img/big-homepage_gif.gif
 hero_link: /publications/
-hero_link_text: Our Research
+hero_link_text: Research
 hero_link2: /current-members/
-hero_link_text2: Our Team
+hero_link_text2: Team
 ---
 
 # About Us

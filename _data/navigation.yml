@@ -2,8 +2,8 @@
   link: /research/
 - name: Publications
   link: /publications/
-- name: News
-  link: /news/
+# - name: News
+#   link: /news/
 - name: Team
   link: /current-members/
   dropdown:
@@ -13,5 +13,5 @@
       link: /alumni/
 - name: Contact
   link: /contact/
-- name: Openings
-  link: /openings/
+# - name: Openings
+#   link: /openings/

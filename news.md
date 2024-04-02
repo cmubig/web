@@ -11,7 +11,7 @@ hide_footer: false
 <table>
   <tr>
    <td> 
-      <a class="twitter-timeline" data-width="600" data-height="600" href="https://twitter.com/CMUBigLab">Tweets by CMU BIG Lab</a>
+      <a class="twitter-timeline" data-width="600" data-height="600" href="https://twitter.com/CMUBigLab">Tweets by CMU BIG</a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
    </td>
    <td>
