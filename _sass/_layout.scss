@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather');
 @import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Forum');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 .content {
     margin-left: 2em;
     margin-right: 2em;
     h1, h2, h3, h4, h5, h6 {
         color: #222;
-        letter-spacing: 0;
+        // letter-spacing: 0;
         -webkit-font-smoothing: antialiased;
-        font-family: 'Lato';
-        font-weight: 700;
+        font-family: 'Montserrat';
+        // font-weight: 700;
     }
     ul.pagination-list {
         list-style: none;
@@ -95,5 +97,5 @@ table.customFormat tr td {
 }
 
 *{
-    font-family: 'Merriweather', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
