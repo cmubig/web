@@ -15,7 +15,7 @@ hero_link_text2: Our Team
 
 # About Us
 
-The main theme of research in Bot Intelligence Group (BIG) is to develop robotic intelligence ranging 
+The main theme of research in the Bot Intelligence Group (BIG) is to develop robotic intelligence ranging 
 from the low-level autonomy to the high-level cognitive abilities. We aim to develop robots that can 
 cooperate or collaborate with humans in shared environments, learning to improve themselves over time 
 through continual on- and off-line training, exploration, and interactions with humans and/or environments. 
@@ -28,12 +28,12 @@ at [Carnegie Mellon University](https://www.cmu.edu/).
 
 ## Research areas 
 
-semantic robot navigation, social robot navigation, human-robot interaction/collaboration, vision 
+Semantic robot navigation, social robot navigation, human-robot interaction/collaboration, vision 
 language planning, creative AI, arts and robotics, simulation-to-real adaptation, robotic intelligence, 
-cognitive robotics
+cognitive robotics.
 
 
-## Highlights
+<!-- ## Highlights -->
 
 {% assign posts = site.posts | where:"categories","highlights" %}
 <div class="columns is-multiline">

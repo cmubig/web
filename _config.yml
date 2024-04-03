@@ -11,6 +11,7 @@ permalink: pretty
 paginate: 5
 paginate_path: "/research/page:num"
 
+favicon: /assets/imgs/logos/big.png
 # Disqus Comments
 disqus:
   # Leave shortname blank to disable comments site-wide.
