@@ -4,7 +4,7 @@ subtitle: Associate Research Professor
 job_title: Associate Research Professor
 category: lab_head
 layout: team_member_personal_page
-image: /img/team/jeanoh.jpg
+image: /assets/imgs/team/jean_oh.png
 keywords: Social Robot Navigation, Creative AI for Robotics, Robotics for Human Values
 ---
 

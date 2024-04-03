@@ -1,10 +1,10 @@
 ---
-title: Arthur Fender Coelho Bucker
+title: Peter Schaldenbrand
 subtitle: Ph.D. Student
 job_title: Ph.D. Student
 category: phd_student
 layout: team_member_personal_page
-image: /assets/imgs/team/arthur_bucker.jpg
+image: /assets/imgs/team/peter_schaldenbrand.png
 link-new-tab: true
-keywords: Policy Improvement
+keywords: Creative AI, Generative AI
 ---

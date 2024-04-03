@@ -4,9 +4,9 @@ subtitle: Master's Student
 job_title: Master's Student
 category: master_student
 layout: team_member_personal_page
-image: /img/team/Sam_Park.png
+image: /assets/imgs/team/sam_park.png
 link-new-tab: true
-keywords: Learning-based Navigation Domain-Adaptation Multimodal_AI
+keywords: Learning-based Navigation, Domain Adaptation, Multimodal AI
 ---
 
 Hi I’m Sam.

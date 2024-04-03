@@ -3,6 +3,8 @@ layout: page
 title: Publications
 show_sidebar: false
 hide_footer: false
+hero_height: is-medium
+hero_image: /assets/imgs/headers/BIG_slideshow.gif
 ---
 
 <style>
@@ -12,7 +14,7 @@ hide_footer: false
     .csl-title, .csl-author, .csl-event, .csl-editor, .csl-venue {
         display: block;
         position: relative;
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .csl-title b {
