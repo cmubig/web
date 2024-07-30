@@ -3,8 +3,8 @@ layout: page
 title: Publications
 show_sidebar: false
 hide_footer: false
-hero_height: is-medium
-hero_image: /assets/imgs/headers/BIG_slideshow.gif
+hero_height: is-large
+hero_image: /assets/imgs/headers/BIG_slideshow_res.gif
 ---
 
 <style>

@@ -1,10 +1,10 @@
 ---
 title: Pablo Ortega-Kral
-subtitle: Research Assistant
-job_title: 2023 Robotics Institute Summer Scholar
-category: collaborator
+subtitle: Ph.D. Student
+job_title: Ph.D. Student
+category: phd_student
 layout: team_member_personal_page
-image: /assets/imgs/team/pablo_ortega-kral.png
+image: /assets/imgs/team/pablo_ortega-kral.jpg
 link-new-tab: true
 keywords: Motion-prediction, Aviation
 ---

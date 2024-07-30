@@ -4,8 +4,8 @@ title: Research
 subtitle: We develop robotic intelligence with high-level cognitive abilities.
 hide_footer: false
 show_sidebar: false
-hero_height: is-medium
-hero_image: /assets/imgs/headers/BIG_slideshow.gif
+hero_height: is-large
+hero_image: /assets/imgs/headers/BIG_slideshow_res.gif
 ---
 
 <!-- TODO replace Search ... with a search icon -->

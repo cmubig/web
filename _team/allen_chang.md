@@ -4,7 +4,7 @@ subtitle: 2023 Robotics Institute Summer Scholar
 job_title: Undergraduate Student
 category: past_intern
 layout: team_member_personal_page
-image: /assets/imgs/team/allen_chang.png
+image: /assets/imgs/team/allen_chang.jpg
 redirect: http://www.cylumn.com
 keywords: Language and Vision, HRI
 link-new-tab: true

@@ -4,7 +4,7 @@ subtitle: Ph.D. Student
 job_title: Ph.D. Student
 category: phd_student
 layout: team_member_personal_page
-image: /assets/imgs/team/ben_stoler.png
+image: /assets/imgs/team/ben_stoler.jpg
 link-new-tab: true
 keywords: Social-Navigation, Motion-Prediction 
 ---

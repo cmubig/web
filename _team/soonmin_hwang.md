@@ -4,7 +4,7 @@ subtitle: Postdoc
 job_title: Postdoc
 category: past_postdoc
 layout: team_member_personal_page
-image: /assets/imgs/team/soonmin_hwang.png
+image: /assets/imgs/team/soonmin_hwang.jpg
 link-new-tab: true
 starting_year: 2022
 graduation_year: 2023
