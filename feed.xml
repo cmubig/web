@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://cmubig.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://cmubig.github.io/" rel="alternate" type="text/html" /><updated>2024-12-20T17:52:49+00:00</updated><id>https://cmubig.github.io/feed.xml</id><title type="html">BIG</title><subtitle>Researching, developing, and testing autonomous robots at Carnegie Mellon University
+</subtitle><entry><title type="html">SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation</title><link href="https://cmubig.github.io/seal/" rel="alternate" type="text/html" title="SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation" /><published>2024-09-19T10:00:00+00:00</published><updated>2024-09-19T10:00:00+00:00</updated><id>https://cmubig.github.io/SEAL</id><content type="html" xml:base="https://cmubig.github.io/seal/">&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://benstoler.com&quot;&gt;Benjamin Stoler&lt;/a&gt;, &lt;a href=&quot;https://navars.xyz&quot;&gt;Ingrid Navarro&lt;/a&gt;, &lt;a href=&quot;https://scholar.google.com/citations?user=7CLS0LwAAAAJ&amp;amp;hl=en&quot;&gt;Jonathan Francis&lt;/a&gt; and &lt;a href=&quot;https://cmubig.github.io/team/jean_oh/&quot;&gt;Jean Oh&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;button&quot; itemprop=&quot;github&quot; href=&quot;https://github.com/cmubig/SEAL&quot; target=&quot;_blank&quot;&gt;
+  &lt;i class=&quot;fab fa-github fa-lg&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a class=&quot;button&quot; itemprop=&quot;paper&quot; href=&quot;https://arxiv.org/abs/2409.10320&quot; target=&quot;_blank&quot;&gt;
+  &lt;i class=&quot;fas fa-file fa-lg&quot;&gt;&lt;/i&gt;  &lt;br /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;abstract&quot;&gt;Abstract&lt;/h1&gt;
+
+&lt;p&gt;Verification and validation of autonomous driving (AD) systems and components is of increasing 
+importance, as such technology increases in real-world prevalence. Safety-critical scenario generation 
+is a key approach to robustify AD policies through closed-loop training. However, existing approaches 
+for scenario generation rely on simplistic objectives, resulting in overly-aggressive or non-reactive 
+adversarial behaviors. To generate diverse adversarial yet realistic scenarios, we propose 
+&lt;strong&gt;Skill-Enabled Adversary Learning (SEAL)&lt;/strong&gt;, a scenario perturbation approach which leverages learned 
+scoring functions and adversarial, human-like skills. SEAL-perturbed scenarios are more realistic than 
+SOTA baselines, leading to improved ego task success across real-world, in-distribution, and 
+out-of-distribution scenarios, of more than 20%.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;1280&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/main.png&quot; alt=&quot;Fairness&quot; /&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;motivation&quot;&gt;Motivation&lt;/h1&gt;
+
+&lt;h3 id=&quot;scenario-realism&quot;&gt;Scenario Realism&lt;/h3&gt;
+
+&lt;p&gt;State-of-the-art (SOTA) adversarial scenario-generation approaches often struggle to provide &lt;i&gt;useful&lt;/i&gt; training stimuli to closed-loop agents. Specifically, we identify that recent SOTA
+approaches generally limited view of safety-criticality, often focused on optimizing &lt;strong&gt;unrealistic&lt;/strong&gt; and &lt;strong&gt;overly-aggressive&lt;/strong&gt; adversarial behavior, while also lacking reactivity to an ego-agent’s behavior diversity.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/unrealistic1.gif&quot; alt=&quot;Realism 1&quot; /&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/unrealistic2.gif&quot; alt=&quot;Realism 2&quot; /&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/unrealistic3.gif&quot; alt=&quot;Realism 3&quot; /&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/unrealistic4.gif&quot; alt=&quot;Realism 4&quot; /&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Examples of unrealistic, overly aggressive &lt;span style=&quot;color:red&quot;&gt;adversarial agents&lt;/span&gt; in SOTA approaches.&lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&quot;-our-idea&quot;&gt;&lt;img width=&quot;50&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/light-bulb.png&quot; alt=&quot;bulb&quot; /&gt; Our Idea&lt;/h4&gt;
+
+&lt;p&gt;To address these limitations, we propose a method for &lt;strong&gt;Skill-Enabled Adversary Learning (SEAL)&lt;/strong&gt; 
+which improves downstream ego behavior in closed loop training for safety-critical scenario generation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SEAL&lt;/strong&gt; introduces two novel components:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;A &lt;strong&gt;learned scoring function&lt;/strong&gt; to anticipate how a reactive ego agent will respond to a candidate adversarial behavior.&lt;/li&gt;
+  &lt;li&gt;A &lt;strong&gt;reactive&lt;/strong&gt; adversary policy that hierarchically selects human-like skill primitives to increase criticality and maintain realism.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;evaluation-fairness&quot;&gt;Evaluation Fairness&lt;/h3&gt;
+
+&lt;p&gt;Safety-critical scenario generation approaches should be evaluated not only in terms of &lt;strong&gt;induced criticality&lt;/strong&gt;, but also in terms of behavior &lt;strong&gt;realism&lt;/strong&gt;. However, recent works 
+rely on evaluating ego policies leveraging their scenario generation approach, wherein safety-critical
+behavior is &lt;u&gt;in-distribution&lt;/u&gt;. While this is informative for assessing ego performance, we argue that performance on challenging scenes is ultimately more important.&lt;/p&gt;
+
+&lt;h4 id=&quot;-our-idea-1&quot;&gt;&lt;img width=&quot;50&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/light-bulb.png&quot; alt=&quot;bulb&quot; /&gt; Our Idea&lt;/h4&gt;
+
+&lt;p&gt;We create a realistic &lt;u&gt;out-of-distribution&lt;/u&gt; evaluation setting leveraging recent work on &lt;a href=&quot;https://navars.xyz/safeshift/&quot;&gt;scenario characterization&lt;/a&gt; to identify real (non-generated) safety-relevant 
+scenarios.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;method&quot;&gt;Method&lt;/h1&gt;
+
+&lt;p&gt;SEAL is a perturbation-based scenario generation approach which aims to increase criticality while also maintain scenario realism.&lt;/p&gt;
+
+&lt;p&gt;Like prior approaches, we utilize pre-trained trajectory prediction models to produce candidate future paths for an adversary agent to follow. However, instead of simply selecting the most &lt;i&gt;critical&lt;/i&gt; predicted candidate based on heuristic functions, and have the adversary follow a predefined path, we aim to select paths more flexibly to enable reactive and human-like behavior.&lt;/p&gt;
+
+&lt;p&gt;To do so, we introduce two novel components: a learned selection function, and a adversarial skill policy.&lt;/p&gt;
+
+&lt;h3 id=&quot;learned-score-function&quot;&gt;Learned Score Function&lt;/h3&gt;
+
+&lt;p&gt;Adversarial approaches often rely on heuristic functions that maximize criticality in order to select candidate adversarial trajectories. One such example is counting bounding-box overlaps.&lt;/p&gt;
+
+&lt;p&gt;To focus on safety-criticality more broadly, e.g., enforcing hard-braking and swerving maneuvers, instead of only collisions, we leverage a learned scoring function that balances two objectives when selecting among candidate adversary trajectories: &lt;strong&gt;closeness to collision&lt;/strong&gt; as well as likelihood of &lt;strong&gt;anticipated deviation&lt;/strong&gt; of an ego agent.&lt;/p&gt;
+
+&lt;p&gt;To learn such a score function, we build a dataset of simulated outcomes between the ego-agent and the adversary, and obtain ground truth &lt;strong&gt;collision&lt;/strong&gt; and &lt;strong&gt;deviation&lt;/strong&gt; measures (equations (1) and (2) in our paper). Then, we train a neural network to predict these values for a rollout yet to happen.&lt;/p&gt;
+
+&lt;h3 id=&quot;adversarial-skill-learning&quot;&gt;Adversarial Skill Learning&lt;/h3&gt;
+
+&lt;p&gt;SEAL operates via an adversarial skill policy, which observes and acts closed-loop alongside the ego agent, to reactively roll-out hierarchical “skills”, that are useful to an adversary while still being human-like.&lt;/p&gt;
+
+&lt;p&gt;We train two Variational AutoEncoder (VAE) networks to to learn to reconstruct demonstrated &lt;strong&gt;adversarial&lt;/strong&gt; (e.g., collision or near-misses) and &lt;strong&gt;benign&lt;/strong&gt; (e.g., avoiding collisions while staying on road) skills.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;500&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/skill_space.png&quot; alt=&quot;Skills&quot; /&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Skill-space visualized with t-SNE&lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The adversarial agent, leverages these policies to select skills which are likely to lead to a safety critical outcome, while also being human-like thereby improving behavior realism.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;results&quot;&gt;Results&lt;/h1&gt;
+
+&lt;h4 id=&quot;ego-policy-training&quot;&gt;Ego Policy Training&lt;/h4&gt;
+
+&lt;p&gt;We evaluate SEAL primarily by examining it’s effectiveness when used as a form of data augmentation, during closed-loop training of an ego policy. Importantly, we assess trained policies on real &lt;a href=&quot;https://waymo.com/open/data/motion/&quot;&gt;WOMD&lt;/a&gt;, out-of-distribution scenarios from &lt;a href=&quot;https://navars.xyz/safeshift/&quot;&gt;SafeShift&lt;/a&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Ego-Replay, WOMD-SafeShift Hard (Avg. Success 61%) &lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/replay_hard50.gif&quot; alt=&quot;Replay&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Ego GOOSE-trained (Avg. Success 30%) &lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/goose_hard50.gif&quot; alt=&quot;Replay&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Ego CAT-trained (Avg. Success 34%) &lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/cat_hard50.gif&quot; alt=&quot;Replay&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Ego SEAL-trained &lt;b&gt;(Avg Success 40%)&lt;/b&gt; &lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/seal_hard50.gif&quot; alt=&quot;Replay&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Qualitatively, we show an example of CAT and GOOSE-trained policies being insufficiently reactive to the challenging, real-world scenario; while the SEAL-trained policy is able to navigate successfully.&lt;/p&gt;
+
+&lt;h4 id=&quot;seal-generated-scenario-quality&quot;&gt;SEAL-generated Scenario Quality&lt;/h4&gt;
+
+&lt;p&gt;We assess scenario generation quality by examining realism, in the form of Wasserstein distance to real-world adversarial behavior.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Ego-Replay, WOMD-Normal (Adv. Realism WD 0.06) &lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/replay_487simple.gif&quot; alt=&quot;Replay&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Adversarial GOOSE-generated (Adv. Realism WD 0.40) &lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/replay_487goose.gif&quot; alt=&quot;Replay&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Adversarial CAT-generated (Adv. Realism WD 0.17) &lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/replay_487cat.gif&quot; alt=&quot;Replay&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;caption&gt;&lt;i&gt;Adversarial SEAL-generated &lt;b&gt;(Adv. Realism WD 0.11)&lt;/b&gt; &lt;/i&gt;&lt;/caption&gt;
+&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;300&quot; src=&quot;/assets/imgs/posts/2024-09-19-SEAL/replay_487seal.gif&quot; alt=&quot;Replay&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Qualitatively, we show more examples of CAT and GOOSE-generated scenes exhibiting overly-aggressive behavior, while the SEAL scene creates a more nuanced near-miss scenario, reactively avoiding a direct collision.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 align=&quot;center&quot;&gt;
+&lt;span style=&quot;color:blue&quot;&gt;Check out our paper for more details and results!&lt;/span&gt;
+&lt;/h4&gt;
+
+&lt;h1 id=&quot;bibtex&quot;&gt;BibTeX&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@article{stoler2024seal,
+  title={SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation},
+  author={Stoler, Benjamin and Navarro, Ingrid and Francis, Jonathan and Oh, Jean},
+  journal={arXiv preprint arXiv:2409.10320},
+  year={2024}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;</content><author><name>Benjamin Stoler</name></author><category term="research" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cmubig.github.io/assets/imgs/posts/2024-09-19-SEAL/main.png" /><media:content medium="image" url="https://cmubig.github.io/assets/imgs/posts/2024-09-19-SEAL/main.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Amelia: A Large Model and Dataset for Airport Surface Movement Forecasting</title><link href="https://cmubig.github.io/amelia/" rel="alternate" type="text/html" title="Amelia: A Large Model and Dataset for Airport Surface Movement Forecasting" /><published>2024-07-30T10:00:00+00:00</published><updated>2024-07-30T10:00:00+00:00</updated><id>https://cmubig.github.io/Amelia</id><content type="html" xml:base="https://cmubig.github.io/amelia/">&lt;script&gt;
+window.location.href = 'https://ameliacmu.github.io';
+&lt;/script&gt;</content><author><name>Ingrid Navarro</name></author><category term="research" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cmubig.github.io/assets/imgs/posts/2024-07-30-Amelia/klax.gif" /><media:content medium="image" url="https://cmubig.github.io/assets/imgs/posts/2024-07-30-Amelia/klax.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SafeShift: Safety-Informed Distribution Shifts for Robust Trajectory Prediction in Autonomous Driving</title><link href="https://cmubig.github.io/safeshift/" rel="alternate" type="text/html" title="SafeShift: Safety-Informed Distribution Shifts for Robust Trajectory Prediction in Autonomous Driving" /><published>2024-05-09T10:00:00+00:00</published><updated>2024-05-09T10:00:00+00:00</updated><id>https://cmubig.github.io/SafeShift</id><content type="html" xml:base="https://cmubig.github.io/safeshift/">&lt;script&gt;
+window.location.href = 'https://navars.xyz/safeshift/';
+&lt;/script&gt;</content><author><name>Ingrid Navarro</name></author><category term="research" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cmubig.github.io/assets/imgs/posts/2024-05-09-SafeShift/abstract.png" /><media:content medium="image" url="https://cmubig.github.io/assets/imgs/posts/2024-05-09-SafeShift/abstract.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation</title><link href="https://cmubig.github.io/scoft/" rel="alternate" type="text/html" title="SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation" /><published>2024-04-02T00:00:00+00:00</published><updated>2024-04-02T00:00:00+00:00</updated><id>https://cmubig.github.io/SCoFT</id><content type="html" xml:base="https://cmubig.github.io/scoft/">&lt;script&gt;
+window.location.href = 'https://ariannaliu.github.io/SCoFT/';
+&lt;/script&gt;</content><author><name>Zhixuan Liu</name></author><category term="research" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cmubig.github.io/assets/imgs/posts/2024-04-02-SCoFT/model.png" /><media:content medium="image" url="https://cmubig.github.io/assets/imgs/posts/2024-04-02-SCoFT/model.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting</title><link href="https://cmubig.github.io/cofrida/" rel="alternate" type="text/html" title="CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting" /><published>2024-04-02T00:00:00+00:00</published><updated>2024-04-02T00:00:00+00:00</updated><id>https://cmubig.github.io/CoFRIDA</id><content type="html" xml:base="https://cmubig.github.io/cofrida/">&lt;script&gt;
+window.location.href = 'https://pschaldenbrand.github.io/cofrida/';
+&lt;/script&gt;</content><author><name>Peter Schaldenbrand</name></author><category term="research" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cmubig.github.io/assets/imgs/posts/2024-04-02-CoFRIDA/model.png" /><media:content medium="image" url="https://cmubig.github.io/assets/imgs/posts/2024-04-02-CoFRIDA/model.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Social Robot Tree Search (SoRTS)</title><link href="https://cmubig.github.io/sorts/" rel="alternate" type="text/html" title="Social Robot Tree Search (SoRTS)" /><published>2023-07-01T10:00:00+00:00</published><updated>2023-07-01T10:00:00+00:00</updated><id>https://cmubig.github.io/SoRTS</id><content type="html" xml:base="https://cmubig.github.io/sorts/">&lt;script&gt;
+window.location.href = 'https://navars.xyz/sorts/';
+&lt;/script&gt;</content><author><name>Ingrid Navarro</name></author><category term="research" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cmubig.github.io/assets/imgs/posts/2023-07-01-SoRTS/model.png" /><media:content medium="image" url="https://cmubig.github.io/assets/imgs/posts/2023-07-01-SoRTS/model.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -1,0 +1,490 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation - BIG</title>
+  
+
+  <link rel="stylesheet" href="/assets/css/app.css">
+
+  <link rel="shortcut icon" type="image/ico" href="/assets/imgs/logos/big.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#cc002b">
+  <meta name="msapplication-TileColor" content="#b91d47">
+  <meta name="theme-color" content="#ffffff">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  
+  <script>
+    $(document).ready(function () {
+      $('.content a').attr({ 'target': '_blank', 'rel': 'noopener noreferrer' });
+    });
+  </script>
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation | BIG</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation" />
+<meta name="author" content="Benjamin Stoler" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Closed-Loop Scenario Generation" />
+<meta property="og:description" content="Closed-Loop Scenario Generation" />
+<link rel="canonical" href="https://cmubig.github.io/seal/" />
+<meta property="og:url" content="https://cmubig.github.io/seal/" />
+<meta property="og:site_name" content="BIG" />
+<meta property="og:image" content="https://cmubig.github.io/assets/imgs/posts/2024-09-19-SEAL/main.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-19T10:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://cmubig.github.io/assets/imgs/posts/2024-09-19-SEAL/main.png" />
+<meta property="twitter:title" content="SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation" />
+<script type="application/ld+json">
+{"image":"https://cmubig.github.io/assets/imgs/posts/2024-09-19-SEAL/main.png","author":{"@type":"Person","name":"Benjamin Stoler"},"headline":"SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation","dateModified":"2024-09-19T10:00:00+00:00","datePublished":"2024-09-19T10:00:00+00:00","description":"Closed-Loop Scenario Generation","url":"https://cmubig.github.io/seal/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cmubig.github.io/seal/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- head scripts --><!-- Added by Chen -->
+  <script type='text/javascript'
+    src='https://platform-api.sharethis.com/js/sharethis.js#property=5ee902d30e78e50012567eb4&product=inline-follow-buttons&cms=sop'
+    async='async'></script>
+
+  <!-- for mathjax support -->
+  
+
+</head>
+
+<body>
+    
+    <nav class="navbar is-primary">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item navbar-logo">
+                BIG
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">Home</a>
+                
+                
+                
+                <a href="/research/"
+                    class="navbar-item ">Research</a>
+                
+                
+                
+                <a href="/publications/"
+                    class="navbar-item ">Publications</a>
+                
+                
+                
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="/current-members/"
+                        class="navbar-link ">Team</a>
+                    <div class="navbar-dropdown">
+                        
+                        <a href="/current-members/"
+                            class="navbar-item ">Current Members</a>
+                        
+                        <a href="/past-members/"
+                            class="navbar-item ">Past Members</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="/contact/"
+                    class="navbar-item ">Contact</a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="rows">
+                
+
+                
+                <div class="row is-8">
+                      <!-- 
+<div style="text-align: center; display: block; margin-left:auto; margin-right:auto">
+    <img style="text" src="/assets/imgs/posts/2024-09-19-SEAL/main.png" alt="SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation" />
+</div>
+ -->
+
+<!-- Figure out the relative link to the author -->
+
+
+
+
+
+
+<div class="content">
+	<h1>SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation</h1>
+	<hr />
+
+<p><a href="https://benstoler.com">Benjamin Stoler</a>, <a href="https://navars.xyz">Ingrid Navarro</a>, <a href="https://scholar.google.com/citations?user=7CLS0LwAAAAJ&amp;hl=en">Jonathan Francis</a> and <a href="https://cmubig.github.io/team/jean_oh/">Jean Oh</a></p>
+
+<p><a class="button" itemprop="github" href="https://github.com/cmubig/SEAL" target="_blank">
+  <i class="fab fa-github fa-lg"></i>
+</a>
+<a class="button" itemprop="paper" href="https://arxiv.org/abs/2409.10320" target="_blank">
+  <i class="fas fa-file fa-lg"></i>  <br />
+</a></p>
+
+<h1 id="abstract">Abstract</h1>
+
+<p>Verification and validation of autonomous driving (AD) systems and components is of increasing 
+importance, as such technology increases in real-world prevalence. Safety-critical scenario generation 
+is a key approach to robustify AD policies through closed-loop training. However, existing approaches 
+for scenario generation rely on simplistic objectives, resulting in overly-aggressive or non-reactive 
+adversarial behaviors. To generate diverse adversarial yet realistic scenarios, we propose 
+<strong>Skill-Enabled Adversary Learning (SEAL)</strong>, a scenario perturbation approach which leverages learned 
+scoring functions and adversarial, human-like skills. SEAL-perturbed scenarios are more realistic than 
+SOTA baselines, leading to improved ego task success across real-world, in-distribution, and 
+out-of-distribution scenarios, of more than 20%.</p>
+
+<p align="center">
+  <img width="1280" src="/assets/imgs/posts/2024-09-19-SEAL/main.png" alt="Fairness" />
+</p>
+
+<hr />
+
+<h1 id="motivation">Motivation</h1>
+
+<h3 id="scenario-realism">Scenario Realism</h3>
+
+<p>State-of-the-art (SOTA) adversarial scenario-generation approaches often struggle to provide <i>useful</i> training stimuli to closed-loop agents. Specifically, we identify that recent SOTA
+approaches generally limited view of safety-criticality, often focused on optimizing <strong>unrealistic</strong> and <strong>overly-aggressive</strong> adversarial behavior, while also lacking reactivity to an ego-agent’s behavior diversity.</p>
+
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/unrealistic1.gif" alt="Realism 1" />
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/unrealistic2.gif" alt="Realism 2" />
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/unrealistic3.gif" alt="Realism 3" />
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/unrealistic4.gif" alt="Realism 4" />
+</p>
+<p align="center">
+<caption><i>Examples of unrealistic, overly aggressive <span style="color:red">adversarial agents</span> in SOTA approaches.</i></caption>
+</p>
+
+<h4 id="-our-idea"><img width="50" src="/assets/imgs/posts/2024-09-19-SEAL/light-bulb.png" alt="bulb" /> Our Idea</h4>
+
+<p>To address these limitations, we propose a method for <strong>Skill-Enabled Adversary Learning (SEAL)</strong> 
+which improves downstream ego behavior in closed loop training for safety-critical scenario generation.</p>
+
+<p><strong>SEAL</strong> introduces two novel components:</p>
+<ol>
+  <li>A <strong>learned scoring function</strong> to anticipate how a reactive ego agent will respond to a candidate adversarial behavior.</li>
+  <li>A <strong>reactive</strong> adversary policy that hierarchically selects human-like skill primitives to increase criticality and maintain realism.</li>
+</ol>
+
+<h3 id="evaluation-fairness">Evaluation Fairness</h3>
+
+<p>Safety-critical scenario generation approaches should be evaluated not only in terms of <strong>induced criticality</strong>, but also in terms of behavior <strong>realism</strong>. However, recent works 
+rely on evaluating ego policies leveraging their scenario generation approach, wherein safety-critical
+behavior is <u>in-distribution</u>. While this is informative for assessing ego performance, we argue that performance on challenging scenes is ultimately more important.</p>
+
+<h4 id="-our-idea-1"><img width="50" src="/assets/imgs/posts/2024-09-19-SEAL/light-bulb.png" alt="bulb" /> Our Idea</h4>
+
+<p>We create a realistic <u>out-of-distribution</u> evaluation setting leveraging recent work on <a href="https://navars.xyz/safeshift/">scenario characterization</a> to identify real (non-generated) safety-relevant 
+scenarios.</p>
+
+<hr />
+
+<h1 id="method">Method</h1>
+
+<p>SEAL is a perturbation-based scenario generation approach which aims to increase criticality while also maintain scenario realism.</p>
+
+<p>Like prior approaches, we utilize pre-trained trajectory prediction models to produce candidate future paths for an adversary agent to follow. However, instead of simply selecting the most <i>critical</i> predicted candidate based on heuristic functions, and have the adversary follow a predefined path, we aim to select paths more flexibly to enable reactive and human-like behavior.</p>
+
+<p>To do so, we introduce two novel components: a learned selection function, and a adversarial skill policy.</p>
+
+<h3 id="learned-score-function">Learned Score Function</h3>
+
+<p>Adversarial approaches often rely on heuristic functions that maximize criticality in order to select candidate adversarial trajectories. One such example is counting bounding-box overlaps.</p>
+
+<p>To focus on safety-criticality more broadly, e.g., enforcing hard-braking and swerving maneuvers, instead of only collisions, we leverage a learned scoring function that balances two objectives when selecting among candidate adversary trajectories: <strong>closeness to collision</strong> as well as likelihood of <strong>anticipated deviation</strong> of an ego agent.</p>
+
+<p>To learn such a score function, we build a dataset of simulated outcomes between the ego-agent and the adversary, and obtain ground truth <strong>collision</strong> and <strong>deviation</strong> measures (equations (1) and (2) in our paper). Then, we train a neural network to predict these values for a rollout yet to happen.</p>
+
+<h3 id="adversarial-skill-learning">Adversarial Skill Learning</h3>
+
+<p>SEAL operates via an adversarial skill policy, which observes and acts closed-loop alongside the ego agent, to reactively roll-out hierarchical “skills”, that are useful to an adversary while still being human-like.</p>
+
+<p>We train two Variational AutoEncoder (VAE) networks to to learn to reconstruct demonstrated <strong>adversarial</strong> (e.g., collision or near-misses) and <strong>benign</strong> (e.g., avoiding collisions while staying on road) skills.</p>
+
+<p align="center">
+  <img width="500" src="/assets/imgs/posts/2024-09-19-SEAL/skill_space.png" alt="Skills" />
+</p>
+<p align="center">
+<caption><i>Skill-space visualized with t-SNE</i></caption>
+</p>
+
+<p>The adversarial agent, leverages these policies to select skills which are likely to lead to a safety critical outcome, while also being human-like thereby improving behavior realism.</p>
+
+<hr />
+
+<h1 id="results">Results</h1>
+
+<h4 id="ego-policy-training">Ego Policy Training</h4>
+
+<p>We evaluate SEAL primarily by examining it’s effectiveness when used as a form of data augmentation, during closed-loop training of an ego policy. Importantly, we assess trained policies on real <a href="https://waymo.com/open/data/motion/">WOMD</a>, out-of-distribution scenarios from <a href="https://navars.xyz/safeshift/">SafeShift</a></p>
+
+<p align="center">
+<caption><i>Ego-Replay, WOMD-SafeShift Hard (Avg. Success 61%) </i></caption>
+</p>
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/replay_hard50.gif" alt="Replay" />
+</p>
+
+<p align="center">
+<caption><i>Ego GOOSE-trained (Avg. Success 30%) </i></caption>
+</p>
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/goose_hard50.gif" alt="Replay" />
+</p>
+
+<p align="center">
+<caption><i>Ego CAT-trained (Avg. Success 34%) </i></caption>
+</p>
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/cat_hard50.gif" alt="Replay" />
+</p>
+
+<p align="center">
+<caption><i>Ego SEAL-trained <b>(Avg Success 40%)</b> </i></caption>
+</p>
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/seal_hard50.gif" alt="Replay" />
+</p>
+
+<p>Qualitatively, we show an example of CAT and GOOSE-trained policies being insufficiently reactive to the challenging, real-world scenario; while the SEAL-trained policy is able to navigate successfully.</p>
+
+<h4 id="seal-generated-scenario-quality">SEAL-generated Scenario Quality</h4>
+
+<p>We assess scenario generation quality by examining realism, in the form of Wasserstein distance to real-world adversarial behavior.</p>
+
+<p align="center">
+<caption><i>Ego-Replay, WOMD-Normal (Adv. Realism WD 0.06) </i></caption>
+</p>
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/replay_487simple.gif" alt="Replay" />
+</p>
+
+<p align="center">
+<caption><i>Adversarial GOOSE-generated (Adv. Realism WD 0.40) </i></caption>
+</p>
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/replay_487goose.gif" alt="Replay" />
+</p>
+
+<p align="center">
+<caption><i>Adversarial CAT-generated (Adv. Realism WD 0.17) </i></caption>
+</p>
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/replay_487cat.gif" alt="Replay" />
+</p>
+
+<p align="center">
+<caption><i>Adversarial SEAL-generated <b>(Adv. Realism WD 0.11)</b> </i></caption>
+</p>
+<p align="center">
+  <img width="300" src="/assets/imgs/posts/2024-09-19-SEAL/replay_487seal.gif" alt="Replay" />
+</p>
+
+<p>Qualitatively, we show more examples of CAT and GOOSE-generated scenes exhibiting overly-aggressive behavior, while the SEAL scene creates a more nuanced near-miss scenario, reactively avoiding a direct collision.</p>
+
+<hr />
+
+<h4 align="center">
+<span style="color:blue">Check out our paper for more details and results!</span>
+</h4>
+
+<h1 id="bibtex">BibTeX</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{stoler2024seal,
+  title={SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation},
+  author={Stoler, Benjamin and Navarro, Ingrid and Francis, Jonathan and Oh, Jean},
+  journal={arXiv preprint arXiv:2409.10320},
+  year={2024}
+}
+</code></pre></div></div>
+
+<hr />
+
+
+</div>
+
+<div class="tags">
+	
+</div>
+                </div>
+                
+                <div class="container">
+                    <p class="title is-4">Latest Research</p>
+
+<div class="columns auto">
+    
+    <div class="column auto">
+        <a href="/seal/">
+<div class="card" style="height: 100%; display: flex; flex-direction: column; align-items: center;">
+    
+        <div style="height: 300px;">
+            <img src="/assets/imgs/posts/2024-09-19-SEAL/main.png" alt="SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation" style="object-fit: contain; height: 100%;">
+        </div>
+    
+    <div class="card-content" style="flex-grow: 3;">
+        <div class="content">
+            
+            <div class="title is-4">SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation</div>
+            
+            <p></p>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Published: Sep 19, 2024</p>
+    </footer>
+</div>
+</a>
+
+    </div>
+    
+    <div class="column auto">
+        <a href="/amelia/">
+<div class="card" style="height: 100%; display: flex; flex-direction: column; align-items: center;">
+    
+        <div style="height: 300px;">
+            <img src="/assets/imgs/posts/2024-07-30-Amelia/klax.gif" alt="Amelia: A Large Model and Dataset for Airport Surface Movement Forecasting" style="object-fit: contain; height: 100%;">
+        </div>
+    
+    <div class="card-content" style="flex-grow: 3;">
+        <div class="content">
+            
+            <div class="title is-4">Amelia: A Large Model and Dataset for Airport Surface Movement Forecasting</div>
+            
+            <p></p>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Published: Jul 30, 2024</p>
+    </footer>
+</div>
+</a>
+
+    </div>
+    
+    <div class="column auto">
+        <a href="/safeshift/">
+<div class="card" style="height: 100%; display: flex; flex-direction: column; align-items: center;">
+    
+        <div style="height: 300px;">
+            <img src="/assets/imgs/posts/2024-05-09-SafeShift/abstract.png" alt="SafeShift: Safety-Informed Distribution Shifts for Robust Trajectory Prediction in Autonomous Driving" style="object-fit: contain; height: 100%;">
+        </div>
+    
+    <div class="card-content" style="flex-grow: 3;">
+        <div class="content">
+            
+            <div class="title is-4">SafeShift: Safety-Informed Distribution Shifts for Robust Trajectory Prediction in Autonomous Driving</div>
+            
+            <p></p>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <p class="card-footer-item">Published: May 9, 2024</p>
+    </footer>
+</div>
+</a>
+
+    </div>
+    
+</div>
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+     <style>
+  #blocks {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    /* background-color: #ffe; */
+  }
+
+  #block1 {
+    height: 33.33%;
+    width: 30%;
+    /* background: red; */
+    float: left;
+  }
+
+  #block2 {
+    height: 33.33%;
+    width: 40%;
+    /* background: yellow; */
+    float: left;
+  }
+
+  #block3 {
+    height: 33.33%;
+    width: 30%;
+    /* background: green; */
+    float: right;
+  }
+</style>
+
+<footer class="footer">
+  <div class="container">
+    <div id="blocks">
+      <div id="block1"><img src="/assets/imgs/logos/big_white.png" alt="BIG Logo" style="width:20%;"></div>
+      <div id="block2">
+        <center>
+          <a class="button" itemprop="twitter" href="https://twitter.com/CMUBigLab" target="_blank">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+          <a class="button" itemprop="github" href="https://github.com/cmubig" target="_blank">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <br>
+          <br>
+          <p class="">&copy; 2024 | BIG</a></p>
+        </center>
+      </div>
+      <div id="block3"><img src="/assets/imgs/logos/cmu_ri.svg" alt="RI Logo" style="float: right;"></div>
+    </div>
+  </div>
+
+
+</footer> 
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts --></body>
+
+</html>
